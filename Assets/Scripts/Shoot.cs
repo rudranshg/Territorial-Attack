@@ -1,22 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
     public GameObject Stone;
-    public float LaunchForce=1000f;
+    private float LaunchForce;
     // Start is called before the first frame update
     // Update is called once per frame
+    public void AdjustForce(float newforce)
+    {
+        LaunchForce = newforce;
+    }
+
     void Update()
     {
-        if (Input.GetAxis("Vertical") > 0) LaunchForce *= 2;
-        else if (Input.GetAxis("Vertical") < 0) LaunchForce /= 2;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire2"))
         {
             Shooting();
         }
-        LaunchForce = 1000;
     }
 
      void Shooting()

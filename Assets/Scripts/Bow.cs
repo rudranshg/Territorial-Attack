@@ -30,7 +30,7 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         faceMouse();
         for(int i=0;i<numberOfPoints;i++)
         {
-            Points[i].transform.position=PointPosition(i*0.1f);
+            Points[i].transform.position=PointPosition(i*0.05f);
         }
     }
     void faceMouse()
