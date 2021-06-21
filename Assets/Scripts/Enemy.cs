@@ -13,6 +13,8 @@ public class Enemy : MonoBehaviour
 
 	public Collided collided;
 
+	public AudioSource HitAudio;
+
 	public void Damage(float damage)
 	{
 		currentHealth -= damage;
@@ -42,6 +44,7 @@ public class Enemy : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		if(collided.i !=0) HitAudio.Play();
 		Damage(collided.i * 10);
 		collided.i = 0;
 		if (currentHealth <= 0)
