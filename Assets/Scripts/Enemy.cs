@@ -14,6 +14,8 @@ public class Enemy : MonoBehaviour
 	public Collided collided;
 
 	public AudioSource HitAudio;
+	public GameObject NextLevelImage;
+	public AudioSource WinAudio;
 
 	public void Damage(float damage)
 	{
@@ -33,12 +35,15 @@ public class Enemy : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+		NextLevelImage.SetActive(false);
 	}
 
 
 	void DestroyObject()
 	{
 		Destroy(hero);
+		WinAudio.Play();
+		NextLevelImage.SetActive(true);
 	}
 
 	// Update is called once per frame

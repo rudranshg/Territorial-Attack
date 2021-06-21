@@ -27,7 +27,11 @@ public class HealthBar : MonoBehaviour
 
 	public void ChangeColor(float sliderValue)
     {
-		if(sliderValue<75 && sliderValue >= 50)
+		if(sliderValue<=100 && sliderValue >= 75)
+        {
+			fill.color = gradient.Evaluate(1f);
+        }
+		else if(sliderValue<75 && sliderValue >= 50)
         {
 			fill.color = gradient.Evaluate(0.8f);
         }

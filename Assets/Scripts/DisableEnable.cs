@@ -13,6 +13,8 @@ public class DisableEnable : MonoBehaviour
     private int count2 = 0;
     private int count3 = 0;
 
+    public int ball,shoe,stone;
+
 
     //the bools corresponding to each object depicting it's appearence/disappearence
     public bool appears1 = false;
@@ -104,7 +106,7 @@ public void Inactive1()
             }
         }
         if (appears1) count1++;
-        if (count1 > 2) destroy1.DestroyGameObject();
+        if (count1 > ball) destroy1.DestroyGameObject();
     }
 
     public void Inactive2()
@@ -169,7 +171,7 @@ public void Inactive1()
             }
         }
         if (appears2) count2++;
-        if (count2 > 1) destroy2.DestroyGameObject();
+        if (count2 > shoe) destroy2.DestroyGameObject();
     }
 
     public void Inactive3()
@@ -234,6 +236,6 @@ public void Inactive1()
             }
         }
         if (appears3) count3++;
-        if (count3 > 0) destroy3.DestroyGameObject();
+        if (count3 > stone) destroy3.DestroyGameObject();
     }
 }

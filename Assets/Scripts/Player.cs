@@ -15,6 +15,10 @@ public class Player : MonoBehaviour
 	public Triggered trigger;
 
 	public AudioSource HitAudio;
+	public GameObject GameOverImage;
+	public bool IsDead = false;
+	public AudioSource GameOverAudio;
+
 
 	public void Damage(float damage)
 	{
@@ -35,18 +39,24 @@ public class Player : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
+		GameOverImage.SetActive(false);
 	}
 
 
 	void DestroyObject()
 	{
-		Destroy(gameObject);
+		gameObject.GetComponent<SpriteRenderer>().enabled = false;
+		gameObject.GetComponent<AudioSource>().enabled = false;
+		IsDead =true;
+		GameOverAudio.Play();
+		GameOverImage.SetActive(true);
+		//EndLevel();
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-        if (trigger.i !=0)
+        if (trigger.i !=0 && !IsDead)
         {
 			HitAudio.Play();
 			Damage(20);
@@ -57,4 +67,8 @@ public class Player : MonoBehaviour
 			DestroyObject();
 		}
 	}
+
+	//void EndLevel(CanvasGroup GameOverImage){};
+		
+	
 }
