@@ -2,17 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
 
 	public float maxHealth = 100;
 	public float currentHealth;
-
 	public GameObject hero;
 
 	public HealthBar healthBar;
 
-	public Triggered trigger;
+	public Collided collided;
 
 	public void Damage(float damage)
 	{
@@ -21,11 +20,10 @@ public class Player : MonoBehaviour
 		healthBar.SetHealth(currentHealth);
 	}
 
-	public void HealthBoost(float healthIncrease)
-    {
-		currentHealth += healthIncrease;
-
-		healthBar.SetHealth(currentHealth);
+	public void HealthBooster()
+	{
+		healthBar.SetHealth(maxHealth);
+		healthBar.slider.value = 100f;
 	}
 
 	// Start is called before the first frame update
@@ -38,17 +36,14 @@ public class Player : MonoBehaviour
 
 	void DestroyObject()
 	{
-		Destroy(gameObject);
+		Destroy(hero);
 	}
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-        if (trigger.i !=0)
-        {
-			Damage(20);
-			trigger.i = 0;
-        }
+		Damage(collided.i * 10);
+		collided.i = 0;
 		if (currentHealth <= 0)
 		{
 			DestroyObject();

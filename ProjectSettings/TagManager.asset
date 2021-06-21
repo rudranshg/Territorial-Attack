@@ -3,7 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy2
+  - Enemy3
+  - Enemy1
+  - Ground
+  - Shoot
+  - Collider
+  - Target
+  - Enemy_tennis_ball
+  - Enemy_shoe
+  - Enemy_stone
   layers:
   - Default
   - TransparentFX
