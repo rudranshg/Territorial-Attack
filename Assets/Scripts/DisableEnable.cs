@@ -15,7 +15,7 @@ public class DisableEnable : MonoBehaviour
 
 
     //the bools corresponding to each object depicting it's appearence/disappearence
-    public bool appears1=false;
+    public bool appears1 = false;
     public bool appears2 = false;
     public bool appears3 = false;
 

@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
 	public Triggered trigger;
 
+	public AudioSource HitAudio;
+
 	public void Damage(float damage)
 	{
 		currentHealth -= damage;
@@ -46,6 +48,7 @@ public class Player : MonoBehaviour
 	{
         if (trigger.i !=0)
         {
+			HitAudio.Play();
 			Damage(20);
 			trigger.i = 0;
         }

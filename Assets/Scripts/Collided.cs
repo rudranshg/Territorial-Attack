@@ -7,7 +7,7 @@ public class Collided : MonoBehaviour
     public int i = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Enemy1")
+        if (collision.gameObject.tag == "Enemy1")
         {
             i = 1;
         }
