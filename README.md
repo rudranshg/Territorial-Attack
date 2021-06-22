@@ -1,5 +1,4 @@
-Territorial Attack Game
-team HawkEyes
+Territorial Attack Game, by team HawkEyes
 
 This is the game for survival and to conquer the territory. The motto is “Survival of the fittest”.
 
