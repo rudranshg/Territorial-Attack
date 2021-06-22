@@ -1,6 +1,6 @@
 Territorial Attack Game, by team HawkEyes
 
-This is the game for survival and to conquer the territory. The motto is “Survival of the fittest”.
+This is the game for survival and to conquer other's territory. The motto is “Survival of the fittest”.
 
  A player has to set the direction and the power to throw the object to hit the enemy. The player and the enemy get alternate chances to hit. The throwing objects will include stone, paper ball, tennis ball, shoe, hammer, etc.
 
