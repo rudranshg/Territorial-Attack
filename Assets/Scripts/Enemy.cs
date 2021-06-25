@@ -5,9 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-	public float maxHealth = 100;
+	public float maxHealth = 100f;
 	public float currentHealth;
-	public GameObject hero;
+	public GameObject enemy;
 
 	public HealthBar healthBar;
 
@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
 
 	void DestroyObject()
 	{
-		Destroy(hero);
+		Destroy(enemy);
 		WinAudio.Play();
 		NextLevelImage.SetActive(true);
 	}
