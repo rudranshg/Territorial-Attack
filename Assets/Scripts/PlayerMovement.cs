@@ -8,15 +8,27 @@ public class PlayerMovement : MonoBehaviour
 
 	Vector3 move;
 
-    // Update is called once per frame
-    void Update()
+	Animator m_Animator;
+
+    public bool isWalking=false;
+    public bool jump = false;
+
+    void Start()
     {
-		move.x = Input.GetAxis("Horizontal");
-		move.z = Input.GetAxis("Vertical");
-    }
+        m_Animator = GetComponent<Animator>();
+    } 
 
 	void FixedUpdate()
 	{
-		transform.Translate(move * Time.fixedDeltaTime * speed);
-	}
+        float moved = Input.GetAxis("Horizontal");
+        if (moved!=0)
+        {
+            isWalking = true;
+        }
+        move.x = Input.GetAxis("Horizontal");
+
+        transform.Translate(move * Time.fixedDeltaTime * speed);
+        m_Animator.SetBool("IsWalking", isWalking);
+        isWalking = false;
+    }
 }
