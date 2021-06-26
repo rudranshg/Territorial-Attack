@@ -44,8 +44,8 @@ public class Shoot : MonoBehaviour
             else if (GameObject.Find("Player").GetComponent<DisableEnable>().appears3)
             {
                 Shooting(Stone3);
-            }   
-                
+            }
+            shot = false;
         }
     }
 
@@ -55,7 +55,5 @@ public class Shoot : MonoBehaviour
         GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
         Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
         GameObject.Find("Player").GetComponent<DisableEnable>().Disappear();
-        shot = false;
-        m_Animator.SetBool("HasShot", shot);
     }
 }

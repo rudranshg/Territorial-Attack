@@ -6,14 +6,15 @@ public class EnemyMovement : MonoBehaviour
 {
     public float speed = 100f;
 
+    float t = 0;
+
     Vector3 move;
 
     Animator m_Animator;
 
-    public Enemy enemy;
-
     public bool isWalking = false;
-    public bool jump = false;
+
+    public Enemy enemy;
 
     void Start()
     {
@@ -22,13 +23,13 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(enemy.isHit)
+        if (enemy.isHit)
         {
-            isWalking = true;
-            move.x = -1;
+            t = -1;
         }
+        move.x = t;
+        if (move.x != 0) isWalking = true;
         transform.Translate(move * Time.fixedDeltaTime * speed);
         m_Animator.SetBool("IsWalking", isWalking);
-        isWalking = false;
-    }
+        if (move.x != 0) isWalking = true;    }
 }
