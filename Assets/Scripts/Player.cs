@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Player : MonoBehaviour
 {
 
@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
 	public AudioSource HitAudio;
 	public AudioSource GameOverAudio;
+	public Collided collided;
+	public int Hits;
+	public TextMeshProUGUI Number;
 
 	public bool IsDead = false;	
 
@@ -56,9 +59,15 @@ public class Player : MonoBehaviour
 		//EndLevel();
 	}
 
+	void HitCounter(){
+		//TextMeshPro Number = GetComponent<TextMeshPro>();
+		Number.text = Hits.ToString();
+	}
+
 	// Update is called once per frame
 	void FixedUpdate()
-	{
+	{	Hits = collided.HitCount;
+		HitCounter();
 		bool isHit = false;
         if (trigger.i !=0 && !IsDead)
         {
@@ -75,5 +84,7 @@ public class Player : MonoBehaviour
 			DestroyObject();
 		}
 		m_Animator.SetBool("IsHit", isHit);
+
+		
 	}
 }
