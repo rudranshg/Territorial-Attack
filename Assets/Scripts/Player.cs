@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class Player : MonoBehaviour
 {
 
@@ -66,7 +66,8 @@ public class Player : MonoBehaviour
 
 	// Update is called once per frame
 	void FixedUpdate()
-	{
+	{	Hits = collided.HitCount;
+		HitCounter();
 		bool isHit = false;
         if (trigger.i !=0 && !IsDead)
         {
@@ -84,7 +85,6 @@ public class Player : MonoBehaviour
 		}
 		m_Animator.SetBool("IsHit", isHit);
 
-		Hits = collided.HitCount;
-		HitCounter();
+		
 	}
 }

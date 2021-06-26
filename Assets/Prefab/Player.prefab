@@ -993,6 +993,7 @@ GameObject:
   - component: {fileID: 4079520549543249564}
   - component: {fileID: 4079520549543249565}
   - component: {fileID: 4079520549543249563}
+  - component: {fileID: 7830127018063411489}
   - component: {fileID: 4079520549543249562}
   m_Layer: 0
   m_Name: Player
@@ -1134,6 +1135,9 @@ MonoBehaviour:
   trigger: {fileID: 4079520549543249564}
   HitAudio: {fileID: 4079520549543249565}
   GameOverAudio: {fileID: 0}
+  collided: {fileID: 0}
+  Hits: 0
+  Number: {fileID: 0}
   IsDead: 0
 --- !u!61 &4079520549543249536
 BoxCollider2D:
@@ -1289,6 +1293,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7830127018063411489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4079520549543249541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95f79edc8dd238042bf36670b928550b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  i: 0
+  HitCount: 0
 --- !u!114 &4079520549543249562
 MonoBehaviour:
   m_ObjectHideFlags: 0
