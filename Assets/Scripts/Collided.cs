@@ -5,6 +5,7 @@ using UnityEngine;
 public class Collided : MonoBehaviour
 {
     public int i = 0;
+    public int HitCount = 0;
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy1")
@@ -19,8 +20,8 @@ public class Collided : MonoBehaviour
         {
             i = 3;
         }
-    }
 
-    
+        if(i!=0)HitCount++;
+    }
 
 }
