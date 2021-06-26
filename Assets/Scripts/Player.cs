@@ -9,15 +9,18 @@ public class Player : MonoBehaviour
 	public float currentHealth;
 
 	public GameObject hero;
+	public GameObject GameOverImage;
 
 	public HealthBar healthBar;
 
 	public Triggered trigger;
 
 	public AudioSource HitAudio;
-	public GameObject GameOverImage;
-	public bool IsDead = false;
 	public AudioSource GameOverAudio;
+
+	public bool IsDead = false;	
+
+	Animator m_Animator;
 
 
 	public void Damage(float damage)
@@ -40,6 +43,7 @@ public class Player : MonoBehaviour
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 		GameOverImage.SetActive(false);
+		m_Animator = GetComponent<Animator>();
 	}
 
 
@@ -47,7 +51,6 @@ public class Player : MonoBehaviour
 	{
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		gameObject.GetComponent<AudioSource>().enabled = false;
-		IsDead =true;
 		GameOverAudio.Play();
 		GameOverImage.SetActive(true);
 		//EndLevel();
@@ -56,19 +59,21 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void FixedUpdate()
 	{
+		bool isHit = false;
         if (trigger.i !=0 && !IsDead)
         {
+			isHit = true;
+			m_Animator.SetBool("IsHit", isHit);
 			HitAudio.Play();
 			Damage(20);
 			trigger.i = 0;
-        }
+		}
 		if (currentHealth <= 0)
 		{
+			IsDead = true;
+			m_Animator.SetBool("HasDied", IsDead);
 			DestroyObject();
 		}
+		m_Animator.SetBool("IsHit", isHit);
 	}
-
-	//void EndLevel(CanvasGroup GameOverImage){};
-		
-	
 }
