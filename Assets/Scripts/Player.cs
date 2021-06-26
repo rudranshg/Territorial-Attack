@@ -17,6 +17,9 @@ public class Player : MonoBehaviour
 
 	public AudioSource HitAudio;
 	public AudioSource GameOverAudio;
+	public Collided collided;
+	public int Hits;
+	public TextMeshProUGUI Number;
 
 	public bool IsDead = false;	
 
@@ -56,6 +59,11 @@ public class Player : MonoBehaviour
 		//EndLevel();
 	}
 
+	void HitCounter(){
+		//TextMeshPro Number = GetComponent<TextMeshPro>();
+		Number.text = Hits.ToString();
+	}
+
 	// Update is called once per frame
 	void FixedUpdate()
 	{
@@ -75,5 +83,8 @@ public class Player : MonoBehaviour
 			DestroyObject();
 		}
 		m_Animator.SetBool("IsHit", isHit);
+
+		Hits = collided.HitCount;
+		HitCounter();
 	}
 }
