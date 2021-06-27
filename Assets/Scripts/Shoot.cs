@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
+    public Bow bow;
     public GameObject Stone1;
     public GameObject Stone2;
     public GameObject Stone3;
@@ -46,6 +47,7 @@ public class Shoot : MonoBehaviour
                 Shooting(Stone3);
             }
             shot = false;
+            bow.numberOfPoints=5;
         }
     }
 
