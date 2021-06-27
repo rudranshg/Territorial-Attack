@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Shoot : MonoBehaviour
 {
+    public Bow bow;
     public GameObject Stone1;
     public GameObject Stone2;
     public GameObject Stone3;
@@ -32,19 +33,21 @@ public class Shoot : MonoBehaviour
         {
             shot = true;
             if (GameObject.Find("Player").GetComponent<DisableEnable>().appears1)
-            {             
+            {
                 Shooting(Stone1);
 
             }
             else if (GameObject.Find("Player").GetComponent<DisableEnable>().appears2)
-            {                
+            {
                 Shooting(Stone2);
-            }    
-               
+            }
+
             else if (GameObject.Find("Player").GetComponent<DisableEnable>().appears3)
             {
                 Shooting(Stone3);
             }
+            shot = false;
+            bow.numberOfPoints=5;
         }
     }
 
