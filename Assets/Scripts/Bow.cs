@@ -6,12 +6,19 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
 {//circle prefab is used to show points
     public Vector2 Direction;
     private float force;
+
     public GameObject PointPrefab;
     public GameObject[] Points;
+    public GameObject extraPoint;
+
     private int arraysize=40;
     public int numberOfPoints;
+
+    public bool tracer=false;
+
     public Shoot shoot;
-    public GameObject extraPoint;
+
+    public DisableEnable enable;
 
     void Start() /*No of points*/
     {
@@ -19,6 +26,7 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         for (int i = 0; i < numberOfPoints; i++)
         {
             Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
+            Points[i].SetActive(false);
         }
 
     }
@@ -27,15 +35,35 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     void Update()
 
     {
+        if((enable.appears1 || enable.appears2 || enable.appears3 )&& !tracer)
+        {
+                for (int i = 0; i < 5; i++)
+                {
+                    Points[i].SetActive(true);
+                }
+        }
+        else if ((enable.appears1 || enable.appears2 || enable.appears3) && tracer)
+        {
+            for (int i = 0; i < 40; i++)
+            {
+                Points[i].SetActive(true);
+            }
+        }
+        else 
+        {
+            Inactive();
+        }
         Vector2 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
         Direction = MousePos - bowPos;
-        faceMouse();
-        for (int i = 0; i < numberOfPoints; i++)
+        if(Input.GetAxis("Fire3") !=0)
         {
-            Points[i].transform.position = PointPosition(i * 0.05f);
-        }
-        
+            faceMouse();
+            for (int i = 0; i < numberOfPoints; i++)
+            {
+                Points[i].transform.position = PointPosition(i * 0.05f);
+            }
+        }       
     }
     void faceMouse()
     {
@@ -50,19 +78,20 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     }
     public void Tracer()
     {
+        tracer = true;
+        Inactive();
         for (int i = 0; i < arraysize; i++)
         {
             Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
         }
-        numberOfPoints=40;
+       numberOfPoints=40;
     }
-    public void retain()
-    {     numberOfPoints=5;
+
+    public void Inactive()
+    {
         for (int i = 0; i < numberOfPoints; i++)
         {
-            Points[i] = Instantiate(PointPrefab, transform.position, Quaternion.identity);
-           
+            Points[i].SetActive(false);
         }
-        
     }
 }

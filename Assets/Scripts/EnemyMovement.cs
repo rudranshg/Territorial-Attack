@@ -10,9 +10,9 @@ public class EnemyMovement : MonoBehaviour
 
     Vector3 move;
 
-    Animator m_Animator;
+    public bool isWalking;
 
-    public bool isWalking = false;
+    Animator m_Animator;
 
     public Enemy enemy;
 
@@ -25,11 +25,11 @@ public class EnemyMovement : MonoBehaviour
     {
         if (enemy.isHit)
         {
-            t = -1;
+            t = -1f;
         }
-        move.x = t;
-        if (move.x != 0) isWalking = true;
-        transform.Translate(move * Time.fixedDeltaTime * speed);
+        isWalking = !Mathf.Approximately(t, 0f);
         m_Animator.SetBool("IsWalking", isWalking);
-        if (move.x != 0) isWalking = true;    }
+        move.x = t;
+        transform.Translate(move * Time.fixedDeltaTime * speed); 
+    }
 }
