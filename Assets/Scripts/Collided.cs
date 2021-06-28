@@ -12,16 +12,20 @@ public class Collided : MonoBehaviour
         {
             i = 1;
         }
-        if (collision.gameObject.tag == "Enemy2")
+        else if (collision.gameObject.tag == "Enemy2")
         {
             i = 2;
         }
-        if (collision.gameObject.tag == "Enemy3")
+        else if (collision.gameObject.tag == "Enemy3")
         {
             i = 3;
         }
+        else if (collision.gameObject.tag == "Hammer")
+        {
+            i = 7;
+        }
 
-        if(i!=0)HitCount++;
+        if (i!=0)HitCount++;
     }
 
 }

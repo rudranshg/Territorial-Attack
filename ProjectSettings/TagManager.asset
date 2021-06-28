@@ -14,6 +14,7 @@ TagManager:
   - Enemy_tennis_ball
   - Enemy_shoe
   - Enemy_stone
+  - Hammer
   layers:
   - Default
   - TransparentFX

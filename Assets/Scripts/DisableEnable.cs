@@ -8,6 +8,7 @@ public class DisableEnable : MonoBehaviour
     public GameObject Object1;
     public GameObject Object2;
     public GameObject Object3;
+    public GameObject HammerButton;
 
     private int count1 = 0;
     private int count2 = 0;
@@ -46,6 +47,11 @@ public class DisableEnable : MonoBehaviour
 
 public void Inactive1()
     {
+        if (HammerButton.activeSelf)
+        {
+            Disappear();
+            return;
+        }
         if (!appears1)   //check if object1 is already present
         {
           if(!appears2)   //check if object2 is already present
@@ -111,6 +117,11 @@ public void Inactive1()
 
     public void Inactive2()
     {
+        if (HammerButton.activeSelf)
+        {
+            Disappear();
+            return;
+        }
         if (!appears2)   //check if object1 is already present
         {
             if (!appears1)   //check if object2 is already present
@@ -176,6 +187,11 @@ public void Inactive1()
 
     public void Inactive3()
     {
+        if (HammerButton.activeSelf)
+        {
+            Disappear();
+            return;
+        }
         if (!appears3)   //check if object1 is already present
         {
             if (!appears2)   //check if object2 is already present

@@ -10,6 +10,7 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public GameObject PointPrefab;
     public GameObject[] Points;
     public GameObject extraPoint;
+    public GameObject HammerButton;
 
     private int arraysize=40;
     public int numberOfPoints;
@@ -35,14 +36,14 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     void Update()
 
     {
-        if((enable.appears1 || enable.appears2 || enable.appears3 )&& !tracer)
+        if((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf )&& !tracer)
         {
                 for (int i = 0; i < 5; i++)
                 {
                     Points[i].SetActive(true);
                 }
         }
-        else if ((enable.appears1 || enable.appears2 || enable.appears3) && tracer)
+        else if ((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf) && tracer)
         {
             for (int i = 0; i < 40; i++)
             {
