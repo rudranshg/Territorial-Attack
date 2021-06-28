@@ -23,10 +23,7 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (enemy.isHit)
-        {
-            t = -1f;
-        }
+        t = -1;
         isWalking = !Mathf.Approximately(t, 0f);
         m_Animator.SetBool("IsWalking", isWalking);
         move.x = t;
