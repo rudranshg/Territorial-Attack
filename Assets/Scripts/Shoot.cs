@@ -46,8 +46,7 @@ public class Shoot : MonoBehaviour
             {
                 Shooting(Stone3);
             }
-            shot = false;
-            bow.numberOfPoints=5;
+            bow.tracer = false;
         }
     }
 

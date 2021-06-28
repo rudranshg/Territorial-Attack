@@ -15,7 +15,7 @@ public class DestroyEffect : MonoBehaviour
     }
      
     //destroy game object
-    void Destroy()
+    public void Destroy()
     {
         Destroy(gameObject);
     }
