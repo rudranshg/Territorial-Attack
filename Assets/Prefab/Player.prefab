@@ -623,7 +623,6 @@ GameObject:
   - component: {fileID: 4079520548596271987}
   - component: {fileID: 4079520548596271986}
   - component: {fileID: 4079520548596271988}
-  - component: {fileID: 4079520548596271989}
   m_Layer: 0
   m_Name: nozzle
   m_TagString: Untagged
@@ -709,26 +708,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63f11cc9d1ebed445906c9a18dbfc3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bow: {fileID: 0}
   Stone1: {fileID: 1099091074001910814, guid: 3702fa283b1510e47a50a94606988aad, type: 3}
   Stone2: {fileID: 658006034996980400, guid: df5865f83373d0541bc677d813227982, type: 3}
   Stone3: {fileID: 2572607105382205931, guid: 67585de52062976468e35dfe5500bca5, type: 3}
   hero: {fileID: 4079520549543249541}
   LaunchForce: 0
   shot: 0
---- !u!114 &4079520548596271989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4079520548596271990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd9345de086d0174a827afc961d67fcb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0}
-  rb: {fileID: 4079520549543249537}
 --- !u!1 &4079520549026826724
 GameObject:
   m_ObjectHideFlags: 0
