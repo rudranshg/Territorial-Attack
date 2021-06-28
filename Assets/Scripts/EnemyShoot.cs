@@ -17,7 +17,8 @@ public class EnemyShoot : MonoBehaviour
     public float delay = 0f;
     public float range;
     public float time = 1f;
-    public float gravityy = 10f;
+    public float gravityy = 5f;
+    public float height;
 
     float velocityX;
     float velocityY;
@@ -68,10 +69,11 @@ public class EnemyShoot : MonoBehaviour
             Fire(projectile[a]);
             countdown = delay;
         }
-        range = Vector2.Distance(character.transform.position, launchsite.transform.position);
+        range = launchsite.transform.position.x - character.transform.position.x;
         range = Random.Range(range-2,range+2);
-        velocityX = range / time;
-        velocityY = gravityy * 10 * time;
+        height = character.transform.position.y - launchsite.transform.position.y;
+        velocityX = (range) / time;
+        velocityY = (2 * height + gravityy * 10 * time * time) / (2 * time);
     }
     void Fire(GameObject weapon)
     {
