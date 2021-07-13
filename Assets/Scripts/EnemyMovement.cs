@@ -8,6 +8,9 @@ public class EnemyMovement : MonoBehaviour
 
     float t = 0;
 
+    public GameObject Stationary;
+    public GameObject Enemy;
+
     Vector3 move;
 
     public bool isWalking;
@@ -19,6 +22,8 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         m_Animator = GetComponent<Animator>();
+        Stationary.transform.position = Enemy.transform.position;
+        Stationary.transform.rotation = Enemy.transform.rotation;
     }
 
     void FixedUpdate()

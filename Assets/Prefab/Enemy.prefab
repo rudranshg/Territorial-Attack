@@ -243,7 +243,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 6
 --- !u!114 &7906019992290463755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -286,7 +286,8 @@ MonoBehaviour:
   delay: 2.1
   range: 0
   time: 1.2
-  gravityy: 2
+  gravityy: 4
+  height: 0
 --- !u!70 &7906019992290463752
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -300,8 +301,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.3551356, y: -0.40141317}
-  m_Size: {x: 6.305159, y: 9.697173}
+  m_Offset: {x: -0.0133981705, y: -0.36686778}
+  m_Size: {x: 1.6930599, y: 3.2239585}
   m_Direction: 0
 --- !u!114 &7906019992290463749
 MonoBehaviour:
@@ -316,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  HitCount: 0
 --- !u!82 &7906019992290463748
 AudioSource:
   m_ObjectHideFlags: 0
@@ -443,8 +445,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b164ac7c5b9f264e83b9236512e5ef2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  isWalking: 1
+  speed: 1.5
+  isWalking: 0
   enemy: {fileID: 7906019992290463755}
 --- !u!1 &7906019992424140688
 GameObject:
