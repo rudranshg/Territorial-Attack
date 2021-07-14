@@ -15,6 +15,7 @@ TagManager:
   - Enemy_shoe
   - Enemy_stone
   - Hammer
+  - Powerups
   layers:
   - Default
   - TransparentFX
