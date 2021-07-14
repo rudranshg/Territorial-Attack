@@ -20,9 +20,8 @@ public class Player : MonoBehaviour
 	public Collided collided;
 	public int Hits;
 	public TextMeshProUGUI Number;
-
 	public bool IsDead = false;	
-
+	
 	Animator m_Animator;
 
 
@@ -63,6 +62,10 @@ public class Player : MonoBehaviour
 		//TextMeshPro Number = GetComponent<TextMeshPro>();
 		Number.text = Hits.ToString();
 	}
+	
+	
+
+	
 
 	// Update is called once per frame
 	void FixedUpdate()
@@ -83,8 +86,11 @@ public class Player : MonoBehaviour
 			m_Animator.SetBool("HasDied", IsDead);
 			DestroyObject();
 		}
+
 		m_Animator.SetBool("IsHit", isHit);
 
+		
+		
 		
 	}
 }
