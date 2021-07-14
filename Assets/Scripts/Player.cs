@@ -48,7 +48,6 @@ public class Player : MonoBehaviour
 		m_Animator = GetComponent<Animator>();
 	}
 
-
 	void DestroyObject()
 	{
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
@@ -63,10 +62,6 @@ public class Player : MonoBehaviour
 		Number.text = Hits.ToString();
 	}
 	
-	
-
-	
-
 	// Update is called once per frame
 	void FixedUpdate()
 	{	Hits = collided.HitCount;
@@ -88,9 +83,5 @@ public class Player : MonoBehaviour
 		}
 
 		m_Animator.SetBool("IsHit", isHit);
-
-		
-		
-		
 	}
 }

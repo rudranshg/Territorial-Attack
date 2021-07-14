@@ -12,21 +12,37 @@ public class PowerupController : MonoBehaviour
     public GameObject tracer;
 
     //Defining counter variables
-    public int count1;
-    public int count2;
-    public int count3;
-    public int count4;
+    public int HP_cost;
+    public int H_cost;
+    public int S_cost;
+    public int L_cost;
     public int hit;
 
     public Player player;
 
+    public void HP_click(){
+        hit -= HP_cost;
+    }
+
+    public void H_click(){
+        hit -= H_cost;
+    }
+
+    public void S_click(){
+        hit -= S_cost;
+    }
+
+    public void L_click(){
+        hit -= L_cost;
+    }
+
      void Start()
     {
         hit = player.Hits;
-        healthPotion.GetComponent<Button>().interactable = true;
-        hammer.GetComponent<Button>().interactable = true;
-        shield.GetComponent<Button>().interactable = true;
-        tracer.GetComponent<Button>().interactable = true;
+        healthPotion.GetComponent<Button>().interactable = false;
+        hammer.GetComponent<Button>().interactable = false;
+        shield.GetComponent<Button>().interactable = false;
+        tracer.GetComponent<Button>().interactable = false;
     }
 
     void Update()
@@ -34,16 +50,16 @@ public class PowerupController : MonoBehaviour
         hit = player.Hits;
 
         //Activating buttons at desired hits
-        if (hit >= count1) healthPotion.GetComponent<Button>().interactable=true;
-        if (hit >= count2) hammer.GetComponent<Button>().interactable = true;
-        if (hit >= count3) shield.GetComponent<Button>().interactable = true;
-        if (hit >= count4) tracer.GetComponent<Button>().interactable = true;
+        if (hit >= HP_cost) healthPotion.GetComponent<Button>().interactable=true;
+        if (hit >= H_cost) hammer.GetComponent<Button>().interactable = true;
+        if (hit >= S_cost) shield.GetComponent<Button>().interactable = true;
+        if (hit >= L_cost) tracer.GetComponent<Button>().interactable = true;
 
         ////Deactivating buttons at desired hits
-        if (hit < count1) healthPotion.GetComponent<Button>().interactable = false;
-        if (hit < count2) hammer.GetComponent<Button>().interactable = false;
-        if (hit < count3) shield.GetComponent<Button>().interactable = false;
-        if (hit < count4) tracer.GetComponent<Button>().interactable = false;
+        if (hit < HP_cost) healthPotion.GetComponent<Button>().interactable = false;
+        if (hit < H_cost) hammer.GetComponent<Button>().interactable = false;
+        if (hit < S_cost) shield.GetComponent<Button>().interactable = false;
+        if (hit < L_cost) tracer.GetComponent<Button>().interactable = false;
     }
 
     
