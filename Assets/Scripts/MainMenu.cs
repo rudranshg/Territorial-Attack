@@ -8,9 +8,12 @@ public class MainMenu : MonoBehaviour
 
     public void PlayButton()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);  // Load next level
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);  // Load next level
     }
-
+    
+    public void Tutorial(){
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
     public void QuitGame()
     {
         Debug.Log("Quit!");

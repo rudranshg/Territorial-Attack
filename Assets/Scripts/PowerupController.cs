@@ -19,23 +19,7 @@ public class PowerupController : MonoBehaviour
     public int hit;
 
     public Player player;
-
-    public void HP_click(){
-        hit -= HP_cost;
-    }
-
-    public void H_click(){
-        hit -= H_cost;
-    }
-
-    public void S_click(){
-        hit -= S_cost;
-    }
-
-    public void L_click(){
-        hit -= L_cost;
-    }
-
+    
      void Start()
     {
         hit = player.Hits;
