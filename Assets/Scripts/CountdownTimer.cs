@@ -54,7 +54,6 @@ public class CountdownTimer : MonoBehaviour
         takingAway = false;
         if (secondsLeft <= 0)
         {
-            Debug.Log("Hello");
             CloneEnemy();
         }    
     }

@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
 		}
 		for(int i=0;i<timer.number;i++)
         {
-			if (timer.clonedEnemy[i].GetComponent<Enemy>().isDied || enemy.isDied)
+			if (timer.clonedEnemy[i].GetComponent<Enemy>().isDied)
 			{
 				for ( i = 0; i < timer.number; i++)
                 {
@@ -105,6 +105,11 @@ public class Player : MonoBehaviour
 					enemyCount += 1;
 			}
         }
+		if (enemy.isDied)
+        {
+			enemy.isDied = false;
+			enemyCount += 1;
+		}
 		if (enemyCount == (timer.number + 1)) DestroyEnemy();
 
 		m_Animator.SetBool("IsHit", isHit);
