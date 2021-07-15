@@ -8,6 +8,7 @@ public class CountdownTimer : MonoBehaviour
     public int secondsLeft = 10;
     public int counter = 0;
     public int number;
+    int i=0;
 
     public bool takingAway = false;
 
@@ -15,10 +16,19 @@ public class CountdownTimer : MonoBehaviour
     public GameObject Enemy;
     public GameObject text;
     public GameObject Counter;
+    public GameObject[] clonedEnemy;
 
     void Start()
     {
         text.GetComponent<Text>().text = "00:" + secondsLeft;
+        for(i=0;i<number;i++)
+        {
+            clonedEnemy[i]= Instantiate(Enemy, Stationary.transform.position, Stationary.transform.rotation);
+            clonedEnemy[i].GetComponent<EnemyShoot>().enabled = false;
+            clonedEnemy[i].GetComponent<EnemyMovement>().enabled = false;
+            clonedEnemy[i].GetComponent<CapsuleCollider2D>().enabled = false;
+        }
+        i = 0;
     }
 
     void Update()
@@ -42,19 +52,27 @@ public class CountdownTimer : MonoBehaviour
             text.GetComponent<Text>().text = "00:" + secondsLeft;
         }
         takingAway = false;
-        if (secondsLeft <= 0) CloneEnemy(); 
+        if (secondsLeft <= 0)
+        {
+            Debug.Log("Hello");
+            CloneEnemy();
+        }    
     }
 
     public void CloneEnemy()
     {
-        if (counter > number)
+        clonedEnemy[i].GetComponent<EnemyShoot>().enabled = true;
+        clonedEnemy[i].GetComponent<EnemyMovement>().enabled = true;
+        clonedEnemy[i].GetComponent<CapsuleCollider2D>().enabled = true;
+        secondsLeft = 20;
+        counter++;
+        i++;
+        if (counter >= number)
         {
             Counter.SetActive(false);
             return;
-        }            
-        GameObject Stoneclone = Instantiate(Enemy, Stationary.transform.position, Stationary.transform.rotation);
-        secondsLeft = 10;
-        counter++;
+        }
+        
     }
 
 }

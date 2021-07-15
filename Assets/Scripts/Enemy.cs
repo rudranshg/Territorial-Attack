@@ -11,16 +11,17 @@ public class Enemy : MonoBehaviour
 	public bool isHit = false;
 
 	public GameObject hero;
-	public GameObject NextLevelImage;
+	
 
 	public HealthBar healthBar;
 
 	public Collided collided;
 
 	public AudioSource HitAudio;
-    public AudioSource WinAudio;
 
 	Animator m_Animator;
+
+	public bool isDied = false;
 
 	public void Damage(float damage)
 	{
@@ -40,23 +41,16 @@ public class Enemy : MonoBehaviour
 	{
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
-		NextLevelImage.SetActive(false);
+		
 		m_Animator = GetComponent<Animator>();
 	}
 
 
-	void DestroyObject()
-	{
-		Destroy(hero);
-		WinAudio.Play();
-		NextLevelImage.SetActive(true);
-	}
+	
 
 	// Update is called once per frame
 	void FixedUpdate()
 	{
-		
-		bool isDied = false;
 		if (collided.i != 0)
 		{
 			isHit = true;
@@ -69,8 +63,9 @@ public class Enemy : MonoBehaviour
 		{
 			isDied = true;
 			m_Animator.SetBool("HasDied", isDied);
-			DestroyObject();
+			hero.SetActive(false);
 		}
+
 		m_Animator.SetBool("IsHit", isHit);
 	}
 }

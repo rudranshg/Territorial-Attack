@@ -8,12 +8,18 @@ public class Player : MonoBehaviour
 	public float maxHealth = 100;
 	public float currentHealth;
 
+	public int enemyCount = 0;
+
 	public GameObject hero;
 	public GameObject GameOverImage;
+	public GameObject NextLevelImage;
+	public Enemy enemy;
 
 	public HealthBar healthBar;
 
 	public Triggered trigger;
+
+	public CountdownTimer timer;
 
 	public AudioSource HitAudio;
 	public AudioSource GameOverAudio;
@@ -45,9 +51,14 @@ public class Player : MonoBehaviour
 		currentHealth = maxHealth;
 		healthBar.SetMaxHealth(maxHealth);
 		GameOverImage.SetActive(false);
+		NextLevelImage.SetActive(false);
 		m_Animator = GetComponent<Animator>();
 	}
 
+	void DestroyEnemy()
+	{
+		NextLevelImage.SetActive(true);
+	}
 
 	void DestroyObject()
 	{
@@ -63,10 +74,6 @@ public class Player : MonoBehaviour
 		Number.text = Hits.ToString();
 	}
 	
-	
-
-	
-
 	// Update is called once per frame
 	void FixedUpdate()
 	{	Hits = collided.HitCount;
@@ -86,11 +93,20 @@ public class Player : MonoBehaviour
 			m_Animator.SetBool("HasDied", IsDead);
 			DestroyObject();
 		}
+		for(int i=0;i<timer.number;i++)
+        {
+			if (timer.clonedEnemy[i].GetComponent<Enemy>().isDied || enemy.isDied)
+			{
+				for ( i = 0; i < timer.number; i++)
+                {
+					timer.clonedEnemy[i].GetComponent<Enemy>().isDied = false;
+				}
+				enemy.isDied = false;
+					enemyCount += 1;
+			}
+        }
+		if (enemyCount == (timer.number + 1)) DestroyEnemy();
 
 		m_Animator.SetBool("IsHit", isHit);
-
-		
-		
-		
 	}
 }
