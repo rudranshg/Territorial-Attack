@@ -712,6 +712,8 @@ MonoBehaviour:
   Stone1: {fileID: 1099091074001910814, guid: 3702fa283b1510e47a50a94606988aad, type: 3}
   Stone2: {fileID: 658006034996980400, guid: df5865f83373d0541bc677d813227982, type: 3}
   Stone3: {fileID: 2572607105382205931, guid: 67585de52062976468e35dfe5500bca5, type: 3}
+  HammerButton: {fileID: 0}
+  Hammer: {fileID: 0}
   hero: {fileID: 4079520549543249541}
   LaunchForce: 0
   shot: 0
@@ -996,8 +998,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4079520549543249541}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.84, y: -5.94, z: 0}
-  m_LocalScale: {x: 1.0802366, y: 0.97716904, z: 1}
+  m_LocalPosition: {x: -11.6966, y: -4.1172, z: 0}
+  m_LocalScale: {x: 1.1361412, y: 0.8491228, z: 1}
   m_Children:
   - {fileID: 4079520550111098027}
   - {fileID: 4079520549487736390}
@@ -1071,6 +1073,7 @@ MonoBehaviour:
   Object1: {fileID: 4079520548731889553}
   Object2: {fileID: 4079520549664329062}
   Object3: {fileID: 4079520548743660789}
+  HammerButton: {fileID: 0}
   ball: 4
   shoe: 3
   stone: 2
@@ -1115,10 +1118,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
+  enemyCount: 0
   hero: {fileID: 4079520548506183480}
   GameOverImage: {fileID: 0}
+  NextLevelImage: {fileID: 0}
+  enemy: {fileID: 0}
   healthBar: {fileID: 4079520548506183478}
   trigger: {fileID: 4079520549543249564}
+  timer: {fileID: 0}
   HitAudio: {fileID: 4079520549543249565}
   GameOverAudio: {fileID: 0}
   collided: {fileID: 0}
@@ -1164,6 +1171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   i: 0
+  trigger: {fileID: 0}
 --- !u!82 &4079520549543249565
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1293,6 +1301,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 0
   HitCount: 0
+  Costs: {fileID: 0}
 --- !u!114 &4079520549543249562
 MonoBehaviour:
   m_ObjectHideFlags: 0
