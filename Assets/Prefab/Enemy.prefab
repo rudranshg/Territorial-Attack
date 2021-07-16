@@ -164,8 +164,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7906019992290463756}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.2045, y: -5.8397, z: 0}
-  m_LocalScale: {x: -1, y: 1, z: 1}
+  m_LocalPosition: {x: 11.107, y: -6.8536, z: 0}
+  m_LocalScale: {x: -2.1013405, y: 2.2309556, z: 1}
   m_Children:
   - {fileID: 7906019992754486508}
   - {fileID: 7906019992285212095}
@@ -260,11 +260,10 @@ MonoBehaviour:
   currentHealth: 0
   isHit: 0
   hero: {fileID: 7906019992290463756}
-  NextLevelImage: {fileID: 0}
   healthBar: {fileID: 7906019992424140690}
   collided: {fileID: 7906019992290463749}
   HitAudio: {fileID: 7906019992290463748}
-  WinAudio: {fileID: 0}
+  isDied: 0
 --- !u!114 &7906019992290463754
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -318,6 +317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   i: 0
   HitCount: 0
+  Costs: {fileID: 0}
 --- !u!82 &7906019992290463748
 AudioSource:
   m_ObjectHideFlags: 0
@@ -446,6 +446,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  Stationary: {fileID: 0}
+  Enemy: {fileID: 0}
   isWalking: 0
   enemy: {fileID: 7906019992290463755}
 --- !u!1 &7906019992424140688
