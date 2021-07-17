@@ -19,6 +19,7 @@ public class Shield : MonoBehaviour
     {
         if(shield_timer<0)
         {
+            Debug.Log("hello");
             shield_timer = time;
             Trigger.GetComponent<Shield>().enabled = false;
             return;

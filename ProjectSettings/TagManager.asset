@@ -8,7 +8,6 @@ TagManager:
   - Enemy3
   - Enemy1
   - Ground
-  - Shoot
   - Collider
   - Target
   - Enemy_tennis_ball
@@ -16,6 +15,7 @@ TagManager:
   - Enemy_stone
   - Hammer
   - Powerups
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -23,8 +23,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - lever
+  - level_end
   - 
   - 
   - 
@@ -52,4 +52,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: level_end
+    uniqueID: 121236737
     locked: 0

@@ -13,9 +13,13 @@ public class Triggered : MonoBehaviour
         trigger.GetComponent<Shield>().enabled = false;        
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Shoot") i = 1;
+        if (collision.gameObject.tag == "Collider")
+        {
+            Debug.Log("Ha");
+            i = 1;
+        }
     }
 
     public void Shield()

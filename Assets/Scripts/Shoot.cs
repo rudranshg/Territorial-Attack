@@ -9,10 +9,15 @@ public class Shoot : MonoBehaviour
     public GameObject Stone1;
     public GameObject Stone2;
     public GameObject Stone3;
+
+    public DisableEnable enable;
+
     public GameObject HammerButton;
     public GameObject Hammer;
     public GameObject hero;
 
+    public GameObject shoot;
+    public bool pressed_shoot = false;
     public float LaunchForce;
 
     public bool shot = false;
@@ -29,9 +34,16 @@ public class Shoot : MonoBehaviour
         LaunchForce = newforce;
     }
 
+    public void shoot_press(){
+        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf)
+        {
+            pressed_shoot = true;
+        }       
+    }
+
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (pressed_shoot)
         {
             shot = true;
             if (GameObject.Find("Player").GetComponent<DisableEnable>().appears1)
@@ -56,11 +68,26 @@ public class Shoot : MonoBehaviour
     void Shooting(GameObject other)
     {
         m_Animator.SetBool("HasShot", shot);
-        GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
-        Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        if (other.gameObject == Hammer)
+        {
+            GameObject Stoneclone = Instantiate(other, transform.position, HammerButton.transform.rotation);
+            Stoneclone.GetComponent<Rotation>().rotation = true;
+            Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        }
+        else
+        {
+            GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
+            Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
+            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+        }        
+        
         GameObject.Find("Player").GetComponent<DisableEnable>().Disappear();
         HammerButton.SetActive(false);
         shot = false;
         m_Animator.SetBool("HasShot", shot);
+        pressed_shoot = false;
+        shoot.SetActive(false);
+        shoot.SetActive(true);
     }
 }

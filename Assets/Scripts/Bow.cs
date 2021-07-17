@@ -36,12 +36,12 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     void Update()
 
     {
-        if((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf )&& !tracer)
+        if ((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf) && !tracer)
         {
-                for (int i = 0; i < 5; i++)
-                {
-                    Points[i].SetActive(true);
-                }
+            for (int i = 0; i < 5; i++)
+            {
+                Points[i].SetActive(true);
+            }
         }
         else if ((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf) && tracer)
         {
@@ -50,21 +50,28 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
                 Points[i].SetActive(true);
             }
         }
-        else 
+        else
         {
             Inactive();
         }
         Vector2 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
-        Direction = MousePos - bowPos;
-        if(Input.GetAxis("Fire3") !=0)
-        {
-            faceMouse();
-            for (int i = 0; i < numberOfPoints; i++)
+        Direction = bowPos - MousePos;
+        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf || tracer)
+        {            
+            if (Input.GetMouseButton(0))
             {
-                Points[i].transform.position = PointPosition(i * 0.05f);
+                if (MousePos.x < 1)
+                {
+                    faceMouse();
+                    for (int i = 0; i < numberOfPoints; i++)
+                    {
+                        Points[i].transform.position = PointPosition(i * 0.05f);
+                    }
+                }
             }
-        }       
+        }
+        
     }
     void faceMouse()
     {

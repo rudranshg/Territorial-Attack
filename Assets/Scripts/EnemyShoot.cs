@@ -10,7 +10,7 @@ public class EnemyShoot : MonoBehaviour
 
     public Transform launchsite;
 
-    float flag = 0;
+    public float flag = 0;
     float countdown;
     float random;
 
@@ -29,7 +29,7 @@ public class EnemyShoot : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3")
+        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3"||collision.gameObject.tag=="Hammer")
         {
             flag = 1;
         }
@@ -78,6 +78,8 @@ public class EnemyShoot : MonoBehaviour
     void Fire(GameObject weapon)
     {
         GameObject attackerinst = Instantiate(weapon, launchsite.position, Quaternion.identity);
+        attackerinst.GetComponent<Rotation>().rotation = true;
+        attackerinst.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
         attackerinst.GetComponent<Rigidbody2D>().velocity = new Vector2(-velocityX, velocityY);
 
     }

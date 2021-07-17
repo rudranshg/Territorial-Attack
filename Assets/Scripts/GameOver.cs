@@ -6,8 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour
 {
-    public void RestartButton (){
+    public GameObject Hit;
+    public GameObject slider;
+    public GameObject shoot;
+    public void RestartButton ()
+    {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Hit.SetActive(true);
+        slider.SetActive(true);
+        shoot.SetActive(true);
     }
 
     public void MainMenuButton (){
@@ -20,5 +27,8 @@ public class GameOver : MonoBehaviour
 
     public void NextLevel(){
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Hit.SetActive(true);
+        slider.SetActive(true);
+        shoot.SetActive(true);
     }
 }

@@ -54,7 +54,10 @@ public class CountdownTimer : MonoBehaviour
         takingAway = false;
         if (secondsLeft <= 0)
         {
-            CloneEnemy();
+            if(number>0)
+            {
+                CloneEnemy();
+            }            
         }    
     }
 

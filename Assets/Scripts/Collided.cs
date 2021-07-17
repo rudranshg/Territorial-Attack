@@ -22,7 +22,6 @@ public class Collided : MonoBehaviour
     public void L_click(){
         HitCount -= Costs.L_cost;
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Enemy1")

@@ -22,10 +22,9 @@ public class DisableEnable : MonoBehaviour
     public bool appears2 = false;
     public bool appears3 = false;
 
-    public Destroy destroy1;
-    public Destroy destroy2;
-    public Destroy destroy3;
-
+    public GameObject TennisBall;
+    public GameObject stones;
+    public GameObject shoes;
     //disappearing each object in starting
     private void Start()
     {
@@ -112,7 +111,7 @@ public void Inactive1()
             }
         }
         if (appears1) count1++;
-        if (count1 > ball) destroy1.DestroyGameObject();
+        if (count1 > ball) TennisBall.SetActive(false);
     }
 
     public void Inactive2()
@@ -182,7 +181,7 @@ public void Inactive1()
             }
         }
         if (appears2) count2++;
-        if (count2 > shoe) destroy2.DestroyGameObject();
+        if (count2 > shoe) shoes.SetActive(false);
     }
 
     public void Inactive3()
@@ -252,6 +251,6 @@ public void Inactive1()
             }
         }
         if (appears3) count3++;
-        if (count3 > stone) destroy3.DestroyGameObject();
+        if (count3 > stone) stones.SetActive(false);
     }
 }
