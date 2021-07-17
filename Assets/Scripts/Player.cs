@@ -8,6 +8,10 @@ public class Player : MonoBehaviour
 	public float maxHealth = 100;
 	public float currentHealth;
 
+	public GameObject Hit;
+	public GameObject slider;
+	public GameObject shoot;
+
 	public int enemyCount = 0;
 
 	public GameObject hero;
@@ -57,14 +61,20 @@ public class Player : MonoBehaviour
 
 	void DestroyEnemy()
 	{
+		Hit.SetActive(false);
+		slider.SetActive(false);
+		shoot.SetActive(false);
 		NextLevelImage.SetActive(true);
 	}
 
-	void DestroyObject()
+	public void DestroyObject()
 	{
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		gameObject.GetComponent<AudioSource>().enabled = false;
 		GameOverAudio.Play();
+		Hit.SetActive(false);
+		slider.SetActive(false);
+		shoot.SetActive(false);
 		GameOverImage.SetActive(true);
 		//EndLevel();
 	}

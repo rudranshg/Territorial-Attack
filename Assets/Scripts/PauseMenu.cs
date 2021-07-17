@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public Slider powerslider;
     public Button[] buttons;
 
+    public Button button;
+
     // Update is called once per frame
     void Update()
     {
@@ -49,5 +51,15 @@ public class PauseMenu : MonoBehaviour
         {
             buttons[i].interactable = false;
         }
+    }
+
+    public void Button()
+    {
+        button.interactable = false;
+    }
+
+    public void Button2()
+    {
+        button.interactable =true;
     }
 }

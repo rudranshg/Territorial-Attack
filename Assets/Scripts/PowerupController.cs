@@ -19,14 +19,14 @@ public class PowerupController : MonoBehaviour
     public int hit;
 
     public Player player;
-    
-     void Start()
+
+    void Start()
     {
         hit = player.Hits;
-        healthPotion.GetComponent<Button>().interactable = false;
-        hammer.GetComponent<Button>().interactable = false;
-        shield.GetComponent<Button>().interactable = false;
-        tracer.GetComponent<Button>().interactable = false;
+        healthPotion.SetActive(false);
+        hammer.SetActive(false);
+        shield.SetActive(false);
+        tracer.SetActive(false);
     }
 
     void Update()
@@ -34,16 +34,15 @@ public class PowerupController : MonoBehaviour
         hit = player.Hits;
 
         //Activating buttons at desired hits
-        if (hit >= HP_cost) healthPotion.GetComponent<Button>().interactable=true;
-        if (hit >= H_cost) hammer.GetComponent<Button>().interactable = true;
-        if (hit >= S_cost) shield.GetComponent<Button>().interactable = true;
-        if (hit >= L_cost) tracer.GetComponent<Button>().interactable = true;
-
+        if (hit >= HP_cost) healthPotion.SetActive(true);
+        if (hit >= H_cost) hammer.SetActive(true);
+        if (hit >= S_cost) shield.SetActive(true);
+            if (hit >= L_cost) tracer.SetActive(true);
         ////Deactivating buttons at desired hits
-        if (hit < HP_cost) healthPotion.GetComponent<Button>().interactable = false;
-        if (hit < H_cost) hammer.GetComponent<Button>().interactable = false;
-        if (hit < S_cost) shield.GetComponent<Button>().interactable = false;
-        if (hit < L_cost) tracer.GetComponent<Button>().interactable = false;
+        if (hit < HP_cost) healthPotion.SetActive(false);
+        if (hit < H_cost) hammer.SetActive(false);
+        if (hit < S_cost) shield.SetActive(false);
+        if (hit < L_cost) tracer.SetActive(false);
     }
 
     

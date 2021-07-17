@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ControlVolume : MonoBehaviour
 {
     public AudioSource Audio; // our audio to be played
-    private float audioVolume = 0.8f;
+    public float audioVolume = 0.4f;
     // Start is called before the first frame update
     void Start()
     {
