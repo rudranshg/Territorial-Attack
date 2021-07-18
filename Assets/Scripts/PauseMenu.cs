@@ -11,6 +11,8 @@ public class PauseMenu : MonoBehaviour
     public Slider powerslider;
     public Button[] buttons;
 
+    public GameObject pause;
+
     public Button button;
 
     // Update is called once per frame
@@ -31,6 +33,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        pause.SetActive(false);
+        pause.SetActive(true);
         PauseUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
@@ -43,6 +47,8 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
+        pause.SetActive(false);
+        pause.SetActive(true);
         PauseUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;

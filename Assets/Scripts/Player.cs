@@ -25,6 +25,8 @@ public class Player : MonoBehaviour
 
 	public CountdownTimer timer;
 
+	public GameObject healthPotion;
+
 	public AudioSource HitAudio;
 	public AudioSource GameOverAudio;
 	public Collided collided;
@@ -45,6 +47,8 @@ public class Player : MonoBehaviour
 	public void HealthBoost(float healthIncrease)
     {
 		currentHealth += healthIncrease;
+		healthPotion.SetActive(false);
+		healthPotion.SetActive(true);
 
 		healthBar.SetHealth(currentHealth);
 	}

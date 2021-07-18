@@ -6,7 +6,7 @@ public class DestroyEnemyProjectile : MonoBehaviour
 {
 
     //to check collision
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Target")|| collision.gameObject.CompareTag("Ground"))
         {
