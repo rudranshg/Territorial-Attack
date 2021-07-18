@@ -8,6 +8,7 @@ public class DisableEnable : MonoBehaviour
     public GameObject Object1;
     public GameObject Object2;
     public GameObject Object3;
+    public GameObject volume;
     public GameObject HammerButton;
 
     private int count1 = 0;
@@ -21,6 +22,8 @@ public class DisableEnable : MonoBehaviour
     public bool appears1 = false;
     public bool appears2 = false;
     public bool appears3 = false;
+
+    bool Volume = false;
 
     public GameObject TennisBall;
     public GameObject stones;
@@ -40,9 +43,24 @@ public class DisableEnable : MonoBehaviour
         Object3.SetActive(false);
           appears1 = false;
          appears2 = false;
-      appears3 = false;
+         appears3 = false;
 
 }
+
+    public void EnableSlider()
+    {
+        if (Volume)
+        {
+            volume.SetActive(false);
+            Volume = false;
+        }
+        else
+        {
+            volume.SetActive(true);
+            Volume = true;
+        }
+
+    }
 
 public void Inactive1()
     {

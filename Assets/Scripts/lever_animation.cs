@@ -12,7 +12,7 @@ public class lever_animation : MonoBehaviour
     public Player player;
 
     void OnTriggerEnter2D(Collider2D other){
-        if(other.transform.tag == "Target"){
+        if(other.transform.tag == "Enemy"){
             reached_lever = true;
         }
     }

@@ -25,6 +25,10 @@ public class Player : MonoBehaviour
 
 	public CountdownTimer timer;
 
+	public GameObject healthPotion;
+
+	public GameObject Pause;
+
 	public AudioSource HitAudio;
 	public AudioSource GameOverAudio;
 	public Collided collided;
@@ -45,6 +49,8 @@ public class Player : MonoBehaviour
 	public void HealthBoost(float healthIncrease)
     {
 		currentHealth += healthIncrease;
+		healthPotion.SetActive(false);
+		healthPotion.SetActive(true);
 
 		healthBar.SetHealth(currentHealth);
 	}
@@ -64,6 +70,7 @@ public class Player : MonoBehaviour
 		Hit.SetActive(false);
 		slider.SetActive(false);
 		shoot.SetActive(false);
+		Pause.SetActive(false);
 		NextLevelImage.SetActive(true);
 	}
 
@@ -75,6 +82,7 @@ public class Player : MonoBehaviour
 		Hit.SetActive(false);
 		slider.SetActive(false);
 		shoot.SetActive(false);
+		Pause.SetActive(false);
 		GameOverImage.SetActive(true);
 		//EndLevel();
 	}

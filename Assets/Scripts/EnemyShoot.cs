@@ -9,6 +9,7 @@ public class EnemyShoot : MonoBehaviour
     public GameObject character;
 
     public Transform launchsite;
+    public float limit;
 
     public float flag = 0;
     float countdown;
@@ -77,6 +78,7 @@ public class EnemyShoot : MonoBehaviour
     }
     void Fire(GameObject weapon)
     {
+        if (range < limit) return;
         GameObject attackerinst = Instantiate(weapon, launchsite.position, Quaternion.identity);
         attackerinst.GetComponent<Rotation>().rotation = true;
         attackerinst.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;

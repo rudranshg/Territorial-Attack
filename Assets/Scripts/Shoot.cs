@@ -12,9 +12,11 @@ public class Shoot : MonoBehaviour
 
     public DisableEnable enable;
 
+    public GameObject HammerSprite;
     public GameObject HammerButton;
     public GameObject Hammer;
     public GameObject hero;
+    public GameObject tracer;
 
     public GameObject shoot;
     public bool pressed_shoot = false;
@@ -35,7 +37,7 @@ public class Shoot : MonoBehaviour
     }
 
     public void shoot_press(){
-        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf)
+        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerSprite.activeSelf)
         {
             pressed_shoot = true;
         }       
@@ -60,7 +62,7 @@ public class Shoot : MonoBehaviour
             {
                 Shooting(Stone3);
             }
-            else if (HammerButton.activeSelf) Shooting(Hammer);
+            else if (HammerSprite.activeSelf) Shooting(Hammer);
             bow.tracer = false;
         }
     }
@@ -70,10 +72,12 @@ public class Shoot : MonoBehaviour
         m_Animator.SetBool("HasShot", shot);
         if (other.gameObject == Hammer)
         {
-            GameObject Stoneclone = Instantiate(other, transform.position, HammerButton.transform.rotation);
+            GameObject Stoneclone = Instantiate(other, HammerSprite.transform.position, HammerSprite.transform.rotation);
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+            HammerButton.SetActive(false);
+            HammerButton.SetActive(true);
         }
         else
         {
@@ -83,11 +87,13 @@ public class Shoot : MonoBehaviour
         }        
         
         GameObject.Find("Player").GetComponent<DisableEnable>().Disappear();
-        HammerButton.SetActive(false);
+        HammerSprite.SetActive(false);
         shot = false;
         m_Animator.SetBool("HasShot", shot);
         pressed_shoot = false;
         shoot.SetActive(false);
         shoot.SetActive(true);
+        tracer.SetActive(false);
+        tracer.SetActive(true);
     }
 }
