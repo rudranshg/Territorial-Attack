@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject pause;
+    
     public void PlayButton()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);  // Load next level

@@ -76,6 +76,8 @@ public class Shoot : MonoBehaviour
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+            HammerButton.SetActive(false);
+            HammerButton.SetActive(true);
         }
         else
         {
@@ -91,8 +93,6 @@ public class Shoot : MonoBehaviour
         pressed_shoot = false;
         shoot.SetActive(false);
         shoot.SetActive(true);
-        HammerButton.SetActive(false);
-        HammerButton.SetActive(true);
         tracer.SetActive(false);
         tracer.SetActive(true);
     }

@@ -7,6 +7,7 @@ public class ControlVolume : MonoBehaviour
 {
     public AudioSource Audio; // our audio to be played
     public float audioVolume = 0.4f;
+    public GameObject cam;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,5 +23,9 @@ public class ControlVolume : MonoBehaviour
     public void updateVolume(float volume)
     {
         audioVolume = volume;
+    }
+    public void Enable()
+    {
+        cam.GetComponent<AudioSource>().enabled = true;
     }
 }

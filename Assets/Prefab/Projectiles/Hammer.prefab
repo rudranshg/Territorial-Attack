@@ -521,7 +521,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startColor:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 1
       minColor: {r: 1, g: 1, b: 1, a: 1}
       maxColor: {r: 0.114142045, g: 0.27488977, b: 0.8962264, a: 1}
       maxGradient:
@@ -2983,8 +2983,8 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 27
-      minScalar: 5
+      scalar: 45
+      minScalar: 40
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -3140,7 +3140,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     separateAxes: 0
-    frequency: 20
+    frequency: 60
     damping: 1
     octaves: 1
     octaveMultiplier: 0.5
