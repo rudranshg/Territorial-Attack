@@ -21,12 +21,12 @@ public class Shield : MonoBehaviour
     {
         if(shield_timer<0)
         {
-            Debug.Log("hello");
             shield.SetActive(false);
             shield.SetActive(true);
             spr_shield.SetActive(false);
             shield_timer = time;
             Trigger.GetComponent<Shield>().enabled = false;
+            shield.GetComponent<AudioSource>().volume = 0f;
             return;
         }
         trigger.i = 0;

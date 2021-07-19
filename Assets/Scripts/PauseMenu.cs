@@ -55,4 +55,12 @@ public class PauseMenu : MonoBehaviour
             buttons[i].interactable = false;
         }
     }
+
+    public void interact()
+    {
+        for (int i = 0; i < 9; i++)
+        {
+            buttons[i].interactable = true;
+        }
+    }
 }

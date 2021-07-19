@@ -17,7 +17,7 @@ public class Triggered : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collider")
         {
-            Debug.Log("Ha");
+            //Debug.Log("Ha");
             i = 1;
         }
     }
