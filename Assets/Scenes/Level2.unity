@@ -6927,7 +6927,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8917190510086069996, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8917190510086069996, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_SizeDelta.x
@@ -7007,7 +7007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917190511367683569, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8917190511367683580, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_UiScaleMode
@@ -7131,7 +7131,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917190511482925525, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
@@ -7270,7 +7270,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0c60cd34a8a597f4e8db0bb7ed36f08c, type: 3}
@@ -7372,7 +7372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Audio: {fileID: 519420033}
-  audioVolume: 0
+  audioVolume: 0.08
   cam: {fileID: 519420028}
 --- !u!1 &523297962
 GameObject:
@@ -13836,7 +13836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &816372980
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13896,7 +13896,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 816372982}
   m_OnClick:
     m_PersistentCalls:
@@ -14034,7 +14034,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &824117526
 GameObject:
@@ -19908,7 +19908,7 @@ Transform:
   - {fileID: 1065010830}
   - {fileID: 899112654}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1034410117
 GameObject:
@@ -27432,7 +27432,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616047, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616047, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Colors.m_PressedColor.a
@@ -28016,7 +28016,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307561085726, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307561085727, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_UiScaleMode
@@ -28352,7 +28352,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307840109624, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307840109624, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Colors.m_PressedColor.a
@@ -28460,7 +28460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307889637112, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Interactable
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307889637112, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Colors.m_PressedColor.a
@@ -34297,7 +34297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1452020127
 RectTransform:
   m_ObjectHideFlags: 0
@@ -37103,7 +37103,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 0
+  m_Interactable: 1
   m_TargetGraphic: {fileID: 1888980481}
   m_OnClick:
     m_PersistentCalls:
@@ -38711,7 +38711,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 7906019994139541021}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061383698}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1b164ac7c5b9f264e83b9236512e5ef2, type: 3}
   m_Name: 
@@ -38768,7 +38768,7 @@ Transform:
   - {fileID: 503939215}
   - {fileID: 1966248786}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2119591759
 SpriteRenderer:
@@ -39239,7 +39239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: shoe
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: Stone
@@ -39553,11 +39553,11 @@ PrefabInstance:
       objectReference: {fileID: 2061383698}
     - target: {fileID: 7906019992290463750, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: speed
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906019992290463750, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906019992290463750, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: Stationary
@@ -39585,7 +39585,7 @@ PrefabInstance:
       objectReference: {fileID: 1377858507}
     - target: {fileID: 7906019992290463754, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7906019992290463755, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: timer

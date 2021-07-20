@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
-    public int secondsLeft = 10;
+    public int secondsLeft;
     public int counter = 0;
     public int number;
     int i=0;
@@ -20,6 +20,7 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
+        secondsLeft = Random.Range(15, 20);
         text.GetComponent<Text>().text = "00:" + secondsLeft;
         for(i=0;i<number;i++)
         {
@@ -66,7 +67,7 @@ public class CountdownTimer : MonoBehaviour
         clonedEnemy[i].GetComponent<EnemyShoot>().enabled = true;
         clonedEnemy[i].GetComponent<EnemyMovement>().enabled = true;
         clonedEnemy[i].GetComponent<CapsuleCollider2D>().enabled = true;
-        secondsLeft = 20;
+        secondsLeft = Random.Range(15, 20);
         counter++;
         i++;
         if (counter >= number)

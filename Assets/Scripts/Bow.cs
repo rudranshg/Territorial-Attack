@@ -11,8 +11,7 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public GameObject[] Points;
     public GameObject extraPoint;
     public GameObject HammerButton;
-
-    public float anchorMinX, anchorMinY, anchorMaxY, anchorMaxX;
+    public float maxY;
  
 
     private int arraysize=40;
@@ -21,6 +20,8 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public bool tracer=false;
 
     public Shoot shoot;
+
+    public Vector2 scale;
 
     public DisableEnable enable;
 
@@ -61,12 +62,12 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         }
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
-        Direction = bowPos - MousePos;
+        Direction = (bowPos - MousePos)-scale;
         if (enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf || tracer)
         {            
             if (Input.GetMouseButton(0))
             {
-                if (MousePos.x < 1 && !(MousePos.x <anchorMaxX && MousePos.x>anchorMinX && MousePos.y < anchorMaxY && MousePos.y > anchorMinY))
+                if (MousePos.x < 1 && MousePos.y<maxY)
                 {
                     faceMouse();
                     for (int i = 0; i < numberOfPoints; i++)
@@ -108,3 +109,5 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         }
     }
 }
+
+

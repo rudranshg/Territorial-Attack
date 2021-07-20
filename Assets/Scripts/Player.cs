@@ -35,6 +35,8 @@ public class Player : MonoBehaviour
 	public TextMeshProUGUI Number;
 	public bool IsDead = false;
 	public AudioSource MainAudio;
+	public GameObject GameOverAudio;
+	public GameObject GameWinAudio;
 	
 	Animator m_Animator;
 	
@@ -72,20 +74,24 @@ public class Player : MonoBehaviour
 		slider.SetActive(false);
 		shoot.SetActive(false);
 		Pause.SetActive(false);
-		NextLevelImage.SetActive(true);
 		MainAudio.Stop();
+		GameWinAudio.GetComponent<AudioSource>().enabled = true;
+		NextLevelImage.SetActive(true);
 	}
 
 	public void DestroyObject()
 	{
 		gameObject.GetComponent<SpriteRenderer>().enabled = false;
 		gameObject.GetComponent<AudioSource>().enabled = false;
+		MainAudio.Stop();
+		GameOverAudio.GetComponent<AudioSource>().enabled = true;
 		//GameOverAudio.Play();
 		Hit.SetActive(false);
 		slider.SetActive(false);
 		shoot.SetActive(false);
 		Pause.SetActive(false);
 		GameOverImage.SetActive(true);
+
 		//EndLevel();
 	}
 

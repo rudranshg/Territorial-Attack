@@ -6,13 +6,15 @@ public class DisableEnable : MonoBehaviour
 {
     //the n number of objects which we want to shoot
     public GameObject[] Projectile;
-    public GameObject volume;
+    //public GameObject volume;
     public GameObject HammerButton;
     public int ball=3;
     public int shoe=2;
     public int stone=2;
 
     public Shoot shoot;
+
+    public bool activated=false;
 
 
     //the bools corresponding to each object depicting it's appearence/disappearence
@@ -40,19 +42,6 @@ public class DisableEnable : MonoBehaviour
         }
         Projectile[i].SetActive(activated);
         active[i] = activated;
-    }
-
-    public void EnableSlider()
-    {
-        if (volume.activeSelf)
-        {
-            volume.SetActive(false);
-        }
-        else
-        {
-            volume.SetActive(true);
-        }
-
     }
 
     public void Update()
@@ -85,65 +74,6 @@ public class DisableEnable : MonoBehaviour
             return;
         }
         Disappear(true, 0);
-        /*if (!active[2])   //check if object2 is already present
-        {
-            if (!appears3)  //check if object3 is already present
-            {
-                Object1.SetActive(true);
-                appears1 = true;
-            }
-            else
-            {
-                Object3.SetActive(false);
-                appears3 = false;
-                Object1.SetActive(true);
-                appears1 = true;
-            }
-        }*/
-        //if (!appears1)   //check if object1 is already present
-        //{
-        /*else
-          {
-              Object2.SetActive(false);
-              appears2 = false;
-              if (!appears3)  
-              {
-                  Object1.SetActive(true);
-                  appears1 = true;
-              }
-              else
-              {
-                  Object3.SetActive(false);
-                  appears3 = false;
-                  Object1.SetActive(true);
-                  appears1 = true;
-              }
-          }
-      }
-      else
-      {
-          Object1.SetActive(false);
-          appears1 = false;
-          if (!appears2)   
-          {
-              if (appears3)  
-              {
-                  Object3.SetActive(false);
-                  appears3 = false;
-              }             
-           }
-          else
-          {
-              Object2.SetActive(false);
-              appears2 = false;
-              if (appears3)  
-              {
-                  Object3.SetActive(false);
-                  appears3 = false;
-              }
-
-          }*/
-        //}
     }
 
     public void Inactive2()
@@ -154,65 +84,6 @@ public class DisableEnable : MonoBehaviour
             return;
         }
         Disappear(true, 1);
-        /*if (!appears1)   //check if object2 is already present
-        {
-            if (!appears3)  //check if object3 is already present
-            {
-                Object2.SetActive(true);
-                appears2 = true;
-            }
-            else
-            {
-                Object3.SetActive(false);
-                appears3 = false;
-                Object2.SetActive(true);
-                appears2 = true;
-            }
-        }*/
-        /*if (!appears2)   //check if object1 is already present
-        {
-            else
-            {
-                Object1.SetActive(false);
-                appears1 = false;
-                if (!appears3)
-                {
-                    Object2.SetActive(true);
-                    appears2 = true;
-                }
-                else
-                {
-                    Object3.SetActive(false);
-                    appears3 = false;
-                    Object2.SetActive(true);
-                    appears2 = true;
-                }
-            }
-        }
-        else
-        {
-            Object2.SetActive(false);
-            appears2 = false;
-            if (!appears1)
-            {
-                if (appears3)
-                {
-                    Object3.SetActive(false);
-                    appears3 = false;
-                }
-            }
-            else
-            {
-                Object1.SetActive(false);
-                appears1 = false;
-                if (appears3)
-                {
-                    Object3.SetActive(false);
-                    appears3 = false;
-                }
-
-            }
-        }*/
     }
 
 
@@ -224,64 +95,5 @@ public class DisableEnable : MonoBehaviour
             return;
         }
         Disappear(true, 2);
-        /*if (!appears2)   //check if object2 is already present
-            {
-                if (!appears1)  //check if object3 is already present
-                {
-                    Object3.SetActive(true);
-                    appears3 = true;
-                }
-                else
-                {
-                    Object1.SetActive(false);
-                    appears1 = false;
-                    Object3.SetActive(true);
-                    appears3 = true;
-                }
-            }*/
-        /*if (!appears3)   //check if object1 is already present
-        {
-            
-            else
-            {
-                Object2.SetActive(false);
-                appears2 = false;
-                if (!appears1)
-                {
-                    Object3.SetActive(true);
-                    appears3 = true;
-                }
-                else
-                {
-                    Object1.SetActive(false);
-                    appears1 = false;
-                    Object3.SetActive(true);
-                    appears3 = true;
-                }
-            }
-        }
-        else
-        {
-            Object3.SetActive(false);
-            appears3 = false;
-            if (!appears2)
-            {
-                if (appears1)
-                {
-                    Object1.SetActive(false);
-                    appears1 = false;
-                }
-            }
-            else
-            {
-                Object2.SetActive(false);
-                appears2 = false;
-                if (appears1)
-                {
-                    Object1.SetActive(false);
-                    appears1 = false;
-                }
-            }
-        }*/
     }
 }
