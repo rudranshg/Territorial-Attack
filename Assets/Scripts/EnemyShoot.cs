@@ -37,6 +37,7 @@ public class EnemyShoot : MonoBehaviour
     }
     void Start()
     {
+        delay=Random.Range(2, 4);
         countdown = delay;
 
     }
