@@ -12,14 +12,19 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public GameObject extraPoint;
     public GameObject HammerButton;
 
+    public float anchorMinX, anchorMinY, anchorMaxY, anchorMaxX;
+ 
+
     private int arraysize=40;
-    public int numberOfPoints;
+    public int numberOfPoints = 7;
 
     public bool tracer=false;
 
     public Shoot shoot;
 
     public DisableEnable enable;
+
+    public Vector2 MousePos;
 
     void Start() /*No of points*/
     {
@@ -36,14 +41,14 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     void Update()
 
     {
-        if ((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf) && !tracer)
+        if ((enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf) && !tracer)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < numberOfPoints; i++)
             {
                 Points[i].SetActive(true);
             }
         }
-        else if ((enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf) && tracer)
+        else if ((enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf) && tracer)
         {
             for (int i = 0; i < 40; i++)
             {
@@ -54,14 +59,14 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         {
             Inactive();
         }
-        Vector2 MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
         Direction = bowPos - MousePos;
-        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerButton.activeSelf || tracer)
+        if (enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf || tracer)
         {            
             if (Input.GetMouseButton(0))
             {
-                if (MousePos.x < 1)
+                if (MousePos.x < 1 && !(MousePos.x <anchorMaxX && MousePos.x>anchorMinX && MousePos.y < anchorMaxY && MousePos.y > anchorMinY))
                 {
                     faceMouse();
                     for (int i = 0; i < numberOfPoints; i++)

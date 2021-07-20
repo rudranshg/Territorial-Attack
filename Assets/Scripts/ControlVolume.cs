@@ -9,10 +9,6 @@ public class ControlVolume : MonoBehaviour
     public float audioVolume = 0.4f;
     public GameObject cam;
     // Start is called before the first frame update
-    void Start()
-    {
-        Audio.Play();
-    }
 
     // Update is called once per frame
     void Update()

@@ -9,10 +9,12 @@ public class HealthBar : MonoBehaviour
 	public Slider slider;
 	public Gradient gradient;
 	public Image fill;
+	public float maxHealth;
 	
 
 	public void SetMaxHealth(float health)
 	{
+		maxHealth = health;
 		slider.maxValue = health;
 		slider.value = health;
 
@@ -27,19 +29,19 @@ public class HealthBar : MonoBehaviour
 
 	public void ChangeColor(float sliderValue)
     {
-		if(sliderValue<=100 && sliderValue >= 75)
+		if(sliderValue<=maxHealth && sliderValue >= 0.75* maxHealth)
         {
 			fill.color = gradient.Evaluate(1f);
         }
-		else if(sliderValue<75 && sliderValue >= 50)
+		else if(sliderValue<0.75* maxHealth && sliderValue >= 0.5* maxHealth)
         {
 			fill.color = gradient.Evaluate(0.8f);
         }
-		else if (sliderValue < 50 && sliderValue >= 25)
+		else if (sliderValue < 0.5* maxHealth && sliderValue >= 0.25* maxHealth)
 		{
 			fill.color = gradient.Evaluate(0.5f);
 		}
-		else if (sliderValue < 25 && sliderValue >=0)
+		else if (sliderValue < 0.25* maxHealth && sliderValue >=0)
 		{
 			fill.color = gradient.Evaluate(0.2f);
 		}

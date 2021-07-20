@@ -44,6 +44,22 @@ public class PowerupController : MonoBehaviour
         if (hit < S_cost) shield.SetActive(false);
         if (hit < L_cost) tracer.SetActive(false);
     }
+     public void HammerAudio()
+    {
+        hammer.GetComponent<AudioSource>().volume = 1f;
+    }
 
-    
+    public void HealthPotionAudio()
+    {
+        healthPotion.GetComponent<AudioSource>().volume = 1f;
+    }
+
+    public void ShieldAudio()
+    {
+       shield.GetComponent<AudioSource>().volume = 1f;
+    }
+
+
+
+
 }

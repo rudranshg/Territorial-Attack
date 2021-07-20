@@ -10,6 +10,10 @@ public class Shoot : MonoBehaviour
     public GameObject Stone2;
     public GameObject Stone3;
 
+    public int count1 = 0;
+    public int count2 = 0;
+    public int count3 = 0;
+
     public DisableEnable enable;
 
     public GameObject HammerSprite;
@@ -17,6 +21,8 @@ public class Shoot : MonoBehaviour
     public GameObject Hammer;
     public GameObject hero;
     public GameObject tracer;
+
+    public GameObject healthPotion;
 
     public GameObject shoot;
     public bool pressed_shoot = false;
@@ -37,7 +43,7 @@ public class Shoot : MonoBehaviour
     }
 
     public void shoot_press(){
-        if (enable.appears1 || enable.appears2 || enable.appears3 || HammerSprite.activeSelf)
+        if (enable.active[0] || enable.active[1] || enable.active[2] || HammerSprite.activeSelf)
         {
             pressed_shoot = true;
         }       
@@ -48,18 +54,21 @@ public class Shoot : MonoBehaviour
         if (pressed_shoot)
         {
             shot = true;
-            if (GameObject.Find("Player").GetComponent<DisableEnable>().appears1)
+            if (GameObject.Find("Player").GetComponent<DisableEnable>().active[0])
             {
+                count1 += 1;
                 Shooting(Stone1);
 
             }
-            else if (GameObject.Find("Player").GetComponent<DisableEnable>().appears2)
+            else if (GameObject.Find("Player").GetComponent<DisableEnable>().active[1])
             {
+                count2 += 1;
                 Shooting(Stone2);
             }
 
-            else if (GameObject.Find("Player").GetComponent<DisableEnable>().appears3)
+            else if (GameObject.Find("Player").GetComponent<DisableEnable>().active[2])
             {
+                count3 += 1;
                 Shooting(Stone3);
             }
             else if (HammerSprite.activeSelf) Shooting(Hammer);
@@ -69,24 +78,24 @@ public class Shoot : MonoBehaviour
 
     void Shooting(GameObject other)
     {
+        healthPotion.GetComponent<AudioSource>().volume = 0f;
         m_Animator.SetBool("HasShot", shot);
         if (other.gameObject == Hammer)
         {
+            HammerButton.GetComponent<AudioSource>().volume = 0f;
             GameObject Stoneclone = Instantiate(other, HammerSprite.transform.position, HammerSprite.transform.rotation);
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
-            HammerButton.SetActive(false);
-            HammerButton.SetActive(true);
+            //HammerButton.SetActive(false);
+            //HammerButton.SetActive(true);
         }
         else
         {
             GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
             Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
-        }        
-        
-        GameObject.Find("Player").GetComponent<DisableEnable>().Disappear();
+        }
         HammerSprite.SetActive(false);
         shot = false;
         m_Animator.SetBool("HasShot", shot);
