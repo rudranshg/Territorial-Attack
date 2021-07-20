@@ -10,6 +10,8 @@ public class Shoot : MonoBehaviour
     public GameObject Stone2;
     public GameObject Stone3;
 
+    public float WindEffect;
+
     public int count1 = 0;
     public int count2 = 0;
     public int count3 = 0;
@@ -86,7 +88,7 @@ public class Shoot : MonoBehaviour
             GameObject Stoneclone = Instantiate(other, HammerSprite.transform.position, HammerSprite.transform.rotation);
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right *( LaunchForce-WindEffect));
             //HammerButton.SetActive(false);
             //HammerButton.SetActive(true);
         }
@@ -94,7 +96,7 @@ public class Shoot : MonoBehaviour
         {
             GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * LaunchForce);
+            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce-WindEffect));
         }
         HammerSprite.SetActive(false);
         shot = false;

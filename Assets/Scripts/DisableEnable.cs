@@ -6,13 +6,15 @@ public class DisableEnable : MonoBehaviour
 {
     //the n number of objects which we want to shoot
     public GameObject[] Projectile;
-    public GameObject volume;
+    //public GameObject volume;
     public GameObject HammerButton;
     public int ball=3;
     public int shoe=2;
     public int stone=2;
 
     public Shoot shoot;
+
+    public bool activated=false;
 
 
     //the bools corresponding to each object depicting it's appearence/disappearence
@@ -42,18 +44,19 @@ public class DisableEnable : MonoBehaviour
         active[i] = activated;
     }
 
-    public void EnableSlider()
+    /*public void EnableSlider()
     {
-        if (volume.activeSelf)
+        if(activated)
         {
             volume.SetActive(false);
+            activated = false;
         }
         else
         {
             volume.SetActive(true);
+            activated = true;
         }
-
-    }
+    }*/
 
     public void Update()
     {

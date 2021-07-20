@@ -61,11 +61,11 @@ public class EnemyShoot : MonoBehaviour
                 }
             }
         }
-        if (flag == 1)
-        {
+        //if (flag == 1)
+        //{
             countdown -= Time.deltaTime;
-        }
-        if (flag == 1 && countdown < 0f)
+        //}
+        if (/*flag == 1 &&*/ countdown < 0f)
         {
             Fire(projectile[a]);
             countdown = delay;
