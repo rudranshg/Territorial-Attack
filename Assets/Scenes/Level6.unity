@@ -1056,7 +1056,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &182659511
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6776,6 +6776,14 @@ PrefabInstance:
     - target: {fileID: 8917190510354075118, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 227.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917190510354075119, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8917190510354075119, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8917190510354075119, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -27333,6 +27341,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.108281, y: 3.2050667}
   m_EdgeRadius: 0
+--- !u!114 &1377858515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1377858507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd6bb11a58acd2447b615375a42d98f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fp: {x: 0, y: 0, z: 0}
+  lp: {x: 0, y: 0, z: 0}
+  Change: {x: 0, y: 0, z: 0}
+  shoot: {fileID: 4079520548232557904}
+  force: {fileID: 1741252558}
+  bow: {fileID: 4079520548232557905}
 --- !u!61 &1377858516
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42347,7 +42373,9 @@ MonoBehaviour:
   Points: []
   extraPoint: {fileID: 8976179179739971893, guid: d1188510daef6f1498636e1514d1a5ad, type: 3}
   HammerButton: {fileID: 1253374213}
+  changingDirection: 0
   maxY: 0
+  forceAdjust: {fileID: 1377858515}
   numberOfPoints: 7
   tracer: 0
   shoot: {fileID: 4079520548232557904}
@@ -42356,6 +42384,7 @@ MonoBehaviour:
   MousePos: {x: 0, y: 0}
   HammerSprite: {fileID: 1253374213}
   Hammer: {x: 1, y: 1}
+  presentForce: 0
 --- !u!4 &4079520548232557906 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4079520548596271991, guid: 57fcf70c605926849990334cdb491162, type: 3}

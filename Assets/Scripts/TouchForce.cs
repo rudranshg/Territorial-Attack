@@ -12,7 +12,7 @@ public class TouchForce : MonoBehaviour
     public Shoot shoot;
     public Slider force;
     public Bow bow;
-    void Update()
+    void FixedUpdate()
     {
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
@@ -37,13 +37,10 @@ public class TouchForce : MonoBehaviour
             Change = lp - fp;
             if(Change.x<0 && Change.y<0 && bow.MousePos.x<1)
             {
-                if(Change.x!=0 && Change.y!=0)
+                if (Change.magnitude >5)
                 {
-                    if(Change.magnitude>25)
-                    {
-                        shoot.LaunchForce = (float)((Change.magnitude) * 5);
-                        force.value = shoot.LaunchForce;
-                    }
+                    shoot.LaunchForce = (float)((Change.magnitude) * 5);
+                    force.value = shoot.LaunchForce;
                 }
             }
         }
