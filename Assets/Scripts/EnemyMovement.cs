@@ -8,6 +8,9 @@ public class EnemyMovement : MonoBehaviour
 
     float t = 0;
 
+    public float TimeChange=5f;
+    public float speedChange=0.5f;
+
     public GameObject Stationary;
     public GameObject Enemy;
 
@@ -19,8 +22,11 @@ public class EnemyMovement : MonoBehaviour
 
     public Enemy enemy;
 
+    public float timer;
+
     void Start()
     {
+        timer = TimeChange;
         m_Animator = GetComponent<Animator>();
         Stationary.transform.position = Enemy.transform.position;
         Stationary.transform.rotation = Enemy.transform.rotation;
@@ -28,6 +34,12 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        timer -= Time.deltaTime;
+        if(timer<=0)
+        {
+            speed += speedChange;
+            timer = TimeChange;
+        }
         t = -1;
         isWalking = !Mathf.Approximately(t, 0f);
         m_Animator.SetBool("IsWalking", isWalking);

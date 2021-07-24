@@ -20,34 +20,24 @@ public class EnemyShoot : MonoBehaviour
     public float time = 1f;
     public float gravityy = 5f;
     public float height;
-
+    public float timer = 8f;
     float velocityX;
     float velocityY;
 
+    public Player player;
 
     int a;
     int[] table = { 33, 33, 34 };
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Enemy1" || collision.gameObject.tag == "Enemy2" || collision.gameObject.tag == "Enemy3"||collision.gameObject.tag=="Hammer")
-        {
-            flag = 1;
-        }
-    }
     void Start()
     {
-        delay=Random.Range(2, 4);
-        countdown = delay;
-
+        countdown = timer;
     }
 
     // Update is called once per frame
     void Update()
 
     {
-        if (flag == 1)
-        {
+            delay = Random.Range(3, 5);
             random = Random.Range(0, 100);      //selcting random number 
             for (int i = 0; i < 3; i++)
             {                                   //selecting projectile to throw 
@@ -61,15 +51,19 @@ public class EnemyShoot : MonoBehaviour
                     random -= table[i];
                 }
             }
-        }
-        //if (flag == 1)
-        //{
             countdown -= Time.deltaTime;
-        //}
-        if (/*flag == 1 &&*/ countdown < 0f)
+        if ( countdown < 0f)
         {
-            Fire(projectile[a]);
-            countdown = delay;
+            /*if(timer==8)
+            {
+                gameObject.transform.GetChild(3).gameObject.SetActive(false);
+                timer = 0;
+            }*/
+            if(!player.reached_lever)
+            {
+                Fire(projectile[a]);
+                countdown = delay;
+            }
         }
         range = launchsite.transform.position.x - character.transform.position.x;
         range = Random.Range(range-2,range+2);

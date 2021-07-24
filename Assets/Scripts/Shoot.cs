@@ -10,6 +10,12 @@ public class Shoot : MonoBehaviour
     public GameObject Stone2;
     public GameObject Stone3;
 
+    public int count=0;
+    float t1, t2;
+    float actual_difference;
+    public float Time_Difference=0;
+    public float decreaseForce=300f;
+
     public float WindEffect;
 
     public int count1 = 0;
@@ -25,34 +31,51 @@ public class Shoot : MonoBehaviour
     public GameObject tracer;
 
     public GameObject healthPotion;
+    public GameObject Shield;
 
     public GameObject shoot;
     public bool pressed_shoot = false;
     public float LaunchForce;
+    public Slider force;
 
     public bool shot = false;
 
     Animator m_Animator;
+
+    float Time_Passed=0f;
 
     private void Start()
     {
         m_Animator = GameObject.Find("Player").GetComponent<Animator>();
     }
     // Update is called once per frame
-    public void AdjustForce(float newforce)
+    /*public void AdjustForce(float newforce)
     {
         LaunchForce = newforce;
-    }
+    }*/
 
     public void shoot_press(){
         if (enable.active[0] || enable.active[1] || enable.active[2] || HammerSprite.activeSelf)
         {
+            if(count==0)
+            {
+                t1 = Time_Passed;
+                count = 1;
+            }
+            else if(count==1)
+            {
+                t2 = Time_Passed;
+                count = 0;
+            }
             pressed_shoot = true;
         }       
     }
 
     void Update()
     {
+        if (t1 > t2) actual_difference = t1 - t2;
+        else if (t2 > t1) actual_difference = t2 - t1;
+        Time_Passed += Time.deltaTime;
         if (pressed_shoot)
         {
             shot = true;
@@ -74,17 +97,21 @@ public class Shoot : MonoBehaviour
                 Shooting(Stone3);
             }
             else if (HammerSprite.activeSelf) Shooting(Hammer);
-            bow.tracer = false;
         }
     }
 
     void Shooting(GameObject other)
     {
-        healthPotion.GetComponent<AudioSource>().volume = 0f;
         m_Animator.SetBool("HasShot", shot);
+        if (actual_difference<Time_Difference)
+        {
+            LaunchForce -= decreaseForce;
+            if (LaunchForce <= 0) LaunchForce = 0;
+            force.value = LaunchForce;
+        }
         if (other.gameObject == Hammer)
         {
-            HammerButton.GetComponent<AudioSource>().volume = 0f;
+            HammerButton.GetComponent<AudioSource>().enabled = false;
             GameObject Stoneclone = Instantiate(other, HammerSprite.transform.position, HammerSprite.transform.rotation);
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
@@ -94,11 +121,20 @@ public class Shoot : MonoBehaviour
         }
         else
         {
+            HammerButton.GetComponent<AudioSource>().enabled = false;
             GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce-WindEffect));
+            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce - WindEffect));
         }
+        HammerButton.GetComponent<AudioSource>().volume = 0f;
+        healthPotion.GetComponent<AudioSource>().volume = 0f;
+        Shield.GetComponent<AudioSource>().volume = 0f;
         HammerSprite.SetActive(false);
+        if(bow.tracer)
+        {
+            bow.Inactive();
+            bow.tracer = false;
+        }
         shot = false;
         m_Animator.SetBool("HasShot", shot);
         pressed_shoot = false;

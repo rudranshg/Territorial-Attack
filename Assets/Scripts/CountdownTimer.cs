@@ -28,6 +28,9 @@ public class CountdownTimer : MonoBehaviour
             clonedEnemy[i].GetComponent<EnemyShoot>().enabled = false;
             clonedEnemy[i].GetComponent<EnemyMovement>().enabled = false;
             clonedEnemy[i].GetComponent<CapsuleCollider2D>().enabled = false;
+            /*clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<ParticleSystem>().Stop();
+            clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<CircleCollider2D>().enabled = false;
+            clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<AudioSource>().enabled = false;*/
         }
         i = 0;
     }
@@ -67,15 +70,16 @@ public class CountdownTimer : MonoBehaviour
         clonedEnemy[i].GetComponent<EnemyShoot>().enabled = true;
         clonedEnemy[i].GetComponent<EnemyMovement>().enabled = true;
         clonedEnemy[i].GetComponent<CapsuleCollider2D>().enabled = true;
-        secondsLeft = Random.Range(15, 20);
+        /*clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<ParticleSystem>().Play();
+        clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<CircleCollider2D>().enabled = true;
+        clonedEnemy[i].transform.GetChild(3).gameObject.GetComponent<AudioSource>().enabled=true;*/
+        secondsLeft = Random.Range(10, 20);
         counter++;
         i++;
         if (counter >= number)
         {
             Counter.SetActive(false);
             return;
-        }
-        
+        }        
     }
-
 }

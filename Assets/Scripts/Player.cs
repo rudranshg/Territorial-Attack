@@ -12,7 +12,10 @@ public class Player : MonoBehaviour
 	public GameObject slider;
 	public GameObject shoot;
 
+
 	public int enemyCount = 0;
+
+	public int MainEnemy;
 
 	public GameObject hero;
 	public GameObject GameOverImage;
@@ -76,7 +79,9 @@ public class Player : MonoBehaviour
 		Pause.SetActive(false);
 		MainAudio.Stop();
 		GameWinAudio.GetComponent<AudioSource>().enabled = true;
+		gameObject.SetActive(false);
 		NextLevelImage.SetActive(true);
+		trigger.enabled = false;
 	}
 
 	public void DestroyObject()
@@ -89,9 +94,12 @@ public class Player : MonoBehaviour
 		Hit.SetActive(false);
 		slider.SetActive(false);
 		shoot.SetActive(false);
-		Pause.SetActive(false);
 		GameOverImage.SetActive(true);
-
+		for (int k = 0; k < (timer.number) + 1; k++)
+		{
+			hits_clone[k].SetActive(false);
+		}
+		Pause.SetActive(false);
 		//EndLevel();
 	}
 
@@ -102,12 +110,14 @@ public class Player : MonoBehaviour
 	
 	// Update is called once per frame
 	void FixedUpdate()
-	{	for(int i=0; i<(timer.number)+1; i++ ){
-			Hits += hits_clone[i].GetComponent<Collided>().HitCount;
+	{	for(int i=0; i<(timer.number)+1; i++ )
+		{
+			Hits += (int)hits_clone[i].GetComponent<Collided>().HitCount;
 			hits_clone[i].GetComponent<Collided>().HitCount = 0;
-			if(hits_clone[i].transform.position.x <= -2){
+			if(hits_clone[i].transform.position.x <= -2)
+			{
 				reached_lever = true;
-			}
+	        }
 		}
 		HitCounter();
 		bool isHit = false;

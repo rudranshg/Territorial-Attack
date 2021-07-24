@@ -11,8 +11,10 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public GameObject[] Points;
     public GameObject extraPoint;
     public GameObject HammerButton;
+    public bool changingDirection;
     public float maxY;
- 
+
+    public TouchForce forceAdjust;
 
     private int arraysize=40;
     public int numberOfPoints = 7;
@@ -26,6 +28,10 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     public DisableEnable enable;
 
     public Vector2 MousePos;
+    public GameObject HammerSprite;
+    public Vector2 Hammer;
+
+    public float presentForce;
 
     void Start() /*No of points*/
     {
@@ -44,6 +50,7 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     {
         if ((enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf) && !tracer)
         {
+            numberOfPoints = 7;
             for (int i = 0; i < numberOfPoints; i++)
             {
                 Points[i].SetActive(true);
@@ -62,12 +69,13 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
         }
         MousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 bowPos = transform.position;
-        Direction = (bowPos - MousePos)-scale;
+        Direction = (bowPos - MousePos)/*-scale*/;
+        if (HammerSprite.activeSelf || tracer) Direction += Hammer;
         if (enable.active[0] || enable.active[1] || enable.active[2] || HammerButton.activeSelf || tracer)
         {            
             if (Input.GetMouseButton(0))
             {
-                if (MousePos.x < 1 && MousePos.y<maxY)
+                if (MousePos.x < 1 /*&& MousePos.y<maxY*/)
                 {
                     faceMouse();
                     for (int i = 0; i < numberOfPoints; i++)
@@ -85,9 +93,9 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
 
     }
     Vector2 PointPosition(float t)
-    {   
-        force=(float) (shoot.LaunchForce/71.5);
-        Vector2 currentPointPos = (Vector2)transform.position + (Direction.normalized * force * t) + 0.5f * Physics2D.gravity * (t * t);
+    {
+        force = (float)(shoot.LaunchForce / 71.5);
+        Vector2 currentPointPos = (Vector2)transform.position + (Direction.normalized * force * t) + 0.5f *Physics2D.gravity* (t * t);
         return currentPointPos;
     }
     public void Tracer()

@@ -172,7 +172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -120.66, y: -35.177}
+  m_AnchoredPosition: {x: -120.59, y: -35.299}
   m_SizeDelta: {x: 0.9768, y: 1.6184}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5967452729624398368
@@ -305,7 +305,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7339f5d7f75e24994ec913f0f41678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5967452729624398367}
 --- !u!82 &5967452729624398369
 AudioSource:
   m_ObjectHideFlags: 0
@@ -708,7 +707,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -25.829}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -117.21, y: -35.35}
+  m_AnchoredPosition: {x: -113.89, y: -35.62}
   m_SizeDelta: {x: 1.487, y: 1.6921}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5967452730818540843
@@ -841,7 +840,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7339f5d7f75e24994ec913f0f41678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5967452730818540833}
 --- !u!82 &5967452730818540839
 AudioSource:
   m_ObjectHideFlags: 0
@@ -976,7 +974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -110.61061, y: -35.228}
+  m_AnchoredPosition: {x: -124.62, y: -35.338}
   m_SizeDelta: {x: 1.798, y: 1.9397}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5967452730898022830
@@ -1085,7 +1083,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7339f5d7f75e24994ec913f0f41678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5967452730898022820}
 --- !u!82 &5967452730898022826
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1220,7 +1217,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 10.515}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -114.02, y: -35.228}
+  m_AnchoredPosition: {x: -116.97, y: -35.299}
   m_SizeDelta: {x: 1.6097, y: 1.7196}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5967452730940899609
@@ -1329,7 +1326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf7339f5d7f75e24994ec913f0f41678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 5967452730940899607}
 --- !u!82 &5967452730940899605
 AudioSource:
   m_ObjectHideFlags: 0
