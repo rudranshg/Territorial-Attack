@@ -14,7 +14,7 @@ public class particleeffects : MonoBehaviour
     }
     public void thundereffect()
     {
-        thunder.Play();
+        //thunder.Play();
     }
 
 }

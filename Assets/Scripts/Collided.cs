@@ -5,8 +5,10 @@ using UnityEngine;
 public class Collided : MonoBehaviour
 {
     public int i = 0;
-    public int HitCount = 0;
+    public float HitCount = 0f;
+    public ParticleSystem enemythunder;
     public PowerupController Costs;
+    //public EnemyMovement movement;
     public void HP_click(){
         HitCount -= Costs.HP_cost;
     }
@@ -38,10 +40,12 @@ public class Collided : MonoBehaviour
         }
         else if (collision.gameObject.tag == "Hammer")
         {
+            enemythunder.Play();
             i = 7;
         }
 
         if (i!=0)HitCount++;
+        //movement.speed += (float)(HitCount /20);
     }
 
 }

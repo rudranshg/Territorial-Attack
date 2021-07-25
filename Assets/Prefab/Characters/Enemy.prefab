@@ -282,11 +282,14 @@ MonoBehaviour:
   - {fileID: 2292690534933763942, guid: 04bebedb6fe6f4f4a9cdeb2a6363b4fa, type: 3}
   character: {fileID: 0}
   launchsite: {fileID: 7906019992754486508}
+  limit: 0
+  flag: 0
   delay: 2.1
   range: 0
   time: 1.2
   gravityy: 4
   height: 0
+  player: {fileID: 0}
 --- !u!70 &7906019992290463752
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -446,10 +449,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1.5
+  TimeChange: 5
+  speedChange: 0.5
   Stationary: {fileID: 0}
   Enemy: {fileID: 0}
   isWalking: 0
   enemy: {fileID: 7906019992290463755}
+  timer: 0
 --- !u!1 &7906019992424140688
 GameObject:
   m_ObjectHideFlags: 0
@@ -584,6 +590,7 @@ MonoBehaviour:
     m_NumColorKeys: 4
     m_NumAlphaKeys: 2
   fill: {fileID: 7906019994017532453}
+  maxHealth: 0
 --- !u!1 &7906019992754486509
 GameObject:
   m_ObjectHideFlags: 0

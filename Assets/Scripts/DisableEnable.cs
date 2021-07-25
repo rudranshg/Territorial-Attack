@@ -44,6 +44,11 @@ public class DisableEnable : MonoBehaviour
         active[i] = activated;
     }
 
+    public void Inactive()
+    {
+        Disappear(false, 1);
+    }
+
     public void Update()
     {
         if (shoot.count1 == ball)

@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rotation: 0
-  speed: 60
+  speed: 120
 --- !u!198 &5329415265589547836
 ParticleSystem:
   m_ObjectHideFlags: 0
