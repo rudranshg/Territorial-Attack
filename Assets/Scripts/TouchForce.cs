@@ -37,10 +37,13 @@ public class TouchForce : MonoBehaviour
             Change = lp - fp;
             if(Change.x<0 && Change.y<0 && bow.MousePos.x<1)
             {
-                if (Change.magnitude >5)
+                if (Change.magnitude >1)
                 {
-                    shoot.LaunchForce = (float)((Change.magnitude) * 5);
-                    force.value = shoot.LaunchForce;
+                    if(shoot.LaunchForce<=2000)
+                    {
+                        shoot.LaunchForce = (float)((Change.magnitude) * 6);
+                        force.value = shoot.LaunchForce;
+                    }
                 }
             }
         }

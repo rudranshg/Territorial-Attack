@@ -1573,7 +1573,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Level - 6
+  m_text: 'Level - 6
+
+    +wind'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -26474,19 +26476,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307357658871, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307357658871, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307357658871, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 139.49
+      value: -200.5
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307357658871, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 79.5
+      value: -97.4
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307561085726, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_RenderMode
@@ -41915,6 +41917,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1359465415}
     - target: {fileID: 4079520548596271988, guid: 57fcf70c605926849990334cdb491162, type: 3}
+      propertyPath: decreaseForce
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 4079520548596271988, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: Time_Difference
       value: 0.25
       objectReference: {fileID: 0}
@@ -42427,7 +42433,7 @@ PrefabInstance:
       objectReference: {fileID: 1103858166}
     - target: {fileID: 7906019992290463750, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: speedChange
-      value: 0.15
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 7906019992290463753, guid: 4e04c9b512c756e478b98598b731b769, type: 3}
       propertyPath: m_Mass

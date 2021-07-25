@@ -81,6 +81,7 @@ public class Player : MonoBehaviour
 		GameWinAudio.GetComponent<AudioSource>().enabled = true;
 		gameObject.SetActive(false);
 		NextLevelImage.SetActive(true);
+		gameObject.GetComponent<Player>().enabled = false;
 		trigger.enabled = false;
 	}
 
@@ -94,11 +95,12 @@ public class Player : MonoBehaviour
 		Hit.SetActive(false);
 		slider.SetActive(false);
 		shoot.SetActive(false);
-		GameOverImage.SetActive(true);
 		for (int k = 0; k < (timer.number) + 1; k++)
 		{
 			hits_clone[k].SetActive(false);
 		}
+		GameOverImage.SetActive(true);
+		gameObject.GetComponent<Player>().enabled = false;
 		Pause.SetActive(false);
 		//EndLevel();
 	}
