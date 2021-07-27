@@ -73,6 +73,8 @@ public class Shoot : MonoBehaviour
 
     void Update()
     {
+        if (LaunchForce > 2000) LaunchForce = 2000f;
+        else if (LaunchForce < 200) LaunchForce = 200f;
         if (t1 > t2) actual_difference = t1 - t2;
         else if (t2 > t1) actual_difference = t2 - t1;
         Time_Passed += Time.deltaTime;
@@ -115,7 +117,14 @@ public class Shoot : MonoBehaviour
             GameObject Stoneclone = Instantiate(other, HammerSprite.transform.position, HammerSprite.transform.rotation);
             Stoneclone.GetComponent<Rotation>().rotation = true;
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right *( LaunchForce-WindEffect));
+            if(LaunchForce>2000)
+            {
+                Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (2000 - WindEffect));
+            }
+            else
+            {
+                Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce - WindEffect));
+            }            
             //HammerButton.SetActive(false);
             //HammerButton.SetActive(true);
         }
@@ -124,7 +133,14 @@ public class Shoot : MonoBehaviour
             HammerButton.GetComponent<AudioSource>().enabled = false;
             GameObject Stoneclone = Instantiate(other, transform.position, transform.rotation);
             Stoneclone.GetComponent<Rigidbody2D>().constraints = RigidbodyConstraints2D.None;
-            Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce - WindEffect));
+            if (LaunchForce > 2000)
+            {
+                Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (2000 - WindEffect));
+            }
+            else
+            {
+                Stoneclone.GetComponent<Rigidbody2D>().AddForce(transform.right * (LaunchForce - WindEffect));
+            }
         }
         HammerButton.GetComponent<AudioSource>().volume = 0f;
         healthPotion.GetComponent<AudioSource>().volume = 0f;
@@ -142,5 +158,7 @@ public class Shoot : MonoBehaviour
         shoot.SetActive(true);
         tracer.SetActive(false);
         tracer.SetActive(true);
+        LaunchForce = 0;
+        force.value = LaunchForce;
     }
 }

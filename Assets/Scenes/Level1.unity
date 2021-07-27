@@ -6674,7 +6674,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8917190510354075118, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 280
+      value: 253
       objectReference: {fileID: 0}
     - target: {fileID: 8917190510354075119, guid: 1f0d8b95d3447e24ea7eba65681f8460, type: 3}
       propertyPath: m_Interactable
@@ -25761,7 +25761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616047, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Interactable
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616047, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
@@ -25873,7 +25873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616048, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 273
+      value: 238
       objectReference: {fileID: 0}
     - target: {fileID: 2816146306648616049, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_TagString
@@ -26837,7 +26837,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307840109625, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 130
+      value: 95
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307840109626, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_IsActive
@@ -26961,7 +26961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307889637113, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 25.999985
+      value: -9.000015
       objectReference: {fileID: 0}
     - target: {fileID: 2816146307889637114, guid: 372a7a5e45a4ce24dbd77fea341e276c, type: 3}
       propertyPath: m_IsActive
@@ -41604,7 +41604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: shoe
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: Stone
@@ -41620,7 +41620,7 @@ PrefabInstance:
       objectReference: {fileID: 4079520548232557904}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: stone
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: stones

@@ -94,7 +94,19 @@ public class Bow : MonoBehaviour//script name is Bow and is attached to bow game
     }
     Vector2 PointPosition(float t)
     {
-        force = (float)(shoot.LaunchForce / 71.5);
+        if(shoot.LaunchForce>2000)
+        {
+            force = (float)(2000 / 71.5);
+        }
+        else if(shoot.LaunchForce<200)
+        {
+            force = (float)(200 / 71.5);
+        }
+        else
+        {
+            force = (float)(shoot.LaunchForce / 71.5);
+        }
+        
         Vector2 currentPointPos = (Vector2)transform.position + (Direction.normalized * force * t) + 0.5f *Physics2D.gravity* (t * t);
         return currentPointPos;
     }
