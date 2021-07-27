@@ -12,7 +12,7 @@ public class TouchForce : MonoBehaviour
     public Shoot shoot;
     public Slider force;
     public Bow bow;
-    void FixedUpdate()
+    void Update()
     {
         if (Input.touchCount == 1) // user is touching the screen with a single touch
         {
@@ -29,22 +29,22 @@ public class TouchForce : MonoBehaviour
             else if (touch.phase == TouchPhase.Ended) //check if the finger is removed from the screen
             {
                 lp = touch.position;  //last touch position. Ommitted if you use list
-                if(Change.x!=0 && Change.y!=0)
+                if((Change.x!=0 || Change.y!=0)&& bow.MousePos.y<8 && bow.MousePos.x <1)
                 {
                     shoot.shoot_press();  //calling shoot function
                 }
             }
             Change = lp - fp;
-            if(Change.x<0 && Change.y<0 && bow.MousePos.x<1)
+            if(/*Change.x<0 && Change.y<0 && */bow.MousePos.x<1)
             {
-                if (Change.magnitude >1)
-                {
-                    if(shoot.LaunchForce<=2000)
+                /*if (Mathf.Abs(Change.x) > 1)
+                {*/
+                    if(((Change.x)*10)<2000)
                     {
-                        shoot.LaunchForce = (float)((Change.magnitude) * 6);
+                        shoot.LaunchForce = (float)(Mathf.Abs(Change.x) *10);
                         force.value = shoot.LaunchForce;
                     }
-                }
+                //}
             }
         }
     }

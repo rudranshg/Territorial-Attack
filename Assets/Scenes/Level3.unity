@@ -42110,11 +42110,11 @@ PrefabInstance:
       objectReference: {fileID: 891153440}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: ball
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: shoe
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: Stone
@@ -42130,7 +42130,7 @@ PrefabInstance:
       objectReference: {fileID: 4079520548232557904}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: stone
-      value: 13
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4079520549543249566, guid: 57fcf70c605926849990334cdb491162, type: 3}
       propertyPath: stones
